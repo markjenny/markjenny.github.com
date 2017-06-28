@@ -1,6 +1,21 @@
 # Site navigation links
 
-- title:
-  url:
+- title: Home
+  url: /
   excerpt:
   image:
+
+- title: Language
+  url: /language/
+
+- title: Operating System
+  url: /operating_system/
+
+- title: Networking
+  url: /networking/
+
+- title: algo
+  url: /algo/
+
+- title: other
+  url: /other/
