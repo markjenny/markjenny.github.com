@@ -7,15 +7,17 @@
 
 - title: Language
   url: /language/
+  excerpt:
+  image:
 
-- title: Operating System
-  url: /operating_system/
+- title: OS
+  url: /OS/
 
 - title: Networking
   url: /networking/
 
-- title: algo
+- title: Algo
   url: /algo/
 
-- title: other
+- title: Other
   url: /other/

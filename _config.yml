@@ -15,7 +15,7 @@ sass:
   sass_dir: _sass
   style: compressed
 permalink: /:categories/:title/
-kramdown:
+kramdown: 
   toc_levels: 1..2
 highlighter: rouge
 gems:
@@ -26,7 +26,7 @@ gems:
 
 # Site owner
 owner: 
-  name: 李健霖
+  name: 大美人
   email: lijianlin0819@gmail.com
   twitter:
   github: markjenny

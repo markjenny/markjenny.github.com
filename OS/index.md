@@ -1,7 +1,6 @@
 ---
 layout: archive
-permalink: /
-title: "Latest Posts"
+title: "Latest Posts in OS"
 image:
  feature: cover.jpg
  credit: Gratisography, Free high-resolution photos
@@ -9,7 +8,7 @@ image:
 ---
 
 <div class="tiles">
-{% for post in site.posts %}
+{% for post in site.categories.OS %}
 	{% include post-grid.html %}
 {% endfor %}
 </div><!-- /.tiles -->
