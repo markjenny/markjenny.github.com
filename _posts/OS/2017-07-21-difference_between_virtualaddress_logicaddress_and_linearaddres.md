@@ -5,14 +5,14 @@ comments: true
 ---
 
 
+
 > 本文将简单地分析一下逻辑地址，线性地址和虚拟地址之间的区别
 
 
 （以下解释中一部分是我自己稍微修改了一下，一部分是直接引用别人在在知乎留下的答案）
 
-------
 
-#三种地址之间的区别
+# 三种地址之间的区别
 
 在intel的平台下，逻辑地址是selector:offset这种形式来表示的，其中selector（我们翻译为段选择子）是CS、DS、SS等段寄存器的高13bit的值，剩下的3bit分别用来描述优先级等信息；offset是段内偏移地址；cpu通过段寄存器中段选择子的内容（这个内容其实就是global description table中的index）去全局描述符表中找到其对应的base address（基址），通过和offset（段内偏移地址）相加得到linear address（线性地址），我们把这个过程称为段式内存管理。
 
@@ -22,7 +22,9 @@ comments: true
 
 既然搞明白了 logical address 和 virtual address 的关系，那么我们再来看下，linear address 和 virtual address 是什么关系。在上面讲到的段式内存管理中，Linux 内核会将 segment base address(段基址)设成 0，于是就有 linear address = 0+offset，又因为 virtual address 就是 offset，所以算出的 linear address在数值上等于 virtual address，注意，是数值上等于，它们之间是差了段基址的，只不过段基址为 0 罢了。
 
-#随便说说
+
+# 随便说说
+
 
 网上很多资料认为逻辑地址是虚拟地址的别名，其实它们不是一个东西。还有很多资料把线性地址当作虚拟地址的别名，其实它们也不是一个东西，只是Linux在x86下将它们搞得数值相等而已，虽然值相等但是本质不同。
 
