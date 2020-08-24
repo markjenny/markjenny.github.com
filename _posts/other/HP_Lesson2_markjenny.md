@@ -1,6 +1,6 @@
-# HP_Lesson2_mark
+# HP_Lesson2
 
-# 基础信息
+## 基础信息
 
 1. 部署环境机器配置
 
@@ -89,7 +89,7 @@
 
      ![图八](https://github.com/markjenny/markjenny.github.com/blob/master/images/sysbench_更新数据_tidb.jpg)
 
-# go-ycsb
+## go-ycsb
 
 1. 测试脚本及相关数据
 
@@ -160,7 +160,7 @@
 
      更新或插入的数据越多，产生的耗时越多，其中如上图grpc中涉及到写数据的话会有prewrite，可以看到prewrite耗时较长，这样就会耗费kv的内存，又由于最后需要落盘，所以会有较多的IO；又由于内存较少（2GB），导致写操作一上来系统资源就会不足，qps变低。并且需要一直解决锁的问题（可以看grpc的图片）。
 
-# go-tpc
+## go-tpc
 
 1. 测试脚本及相关结果
 
@@ -214,7 +214,7 @@
    invalid argument "0.5" for "--sf" flag: strconv.ParseInt: parsing "0.5": invalid syntax
    ```
 
-# 结论
+## 结论
 
 针对该环境、该拓扑结构下存在的性能瓶颈进行总结：
 
@@ -222,6 +222,6 @@
 2. processor和pessimistic lock会导致阻塞严重，影响总体qps；
 3. 通过[svg文件](https://github.com/markjenny/markjenny.github.com/blob/master/images/profiling_4_4_tidb_172_27_0_8_4000809682379.svg)可以发现sql解析其实也是整体流程中比较耗时的一环，TiDB使用了go-yacc的语法分析，依赖于有限状态自动机，后期是否可以通过手动处理来提高性能；
 
-# 建议
+## 建议
 
 tiup一键部署的官方文档中，建议加上grafana的相关连接，因为tiup不仅一键部署了各个server，而且还配套的创建了dashboard，在学习过程中误以为tiup没有创建相关的dashboard又学习官方文档学习如何创建dashboard，导致重点有些偏移到学习grafana中了。
