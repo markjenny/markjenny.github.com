@@ -1,0 +1,1768 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2443.5 1599" width="2444pt" height="1599pt" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" id="graph0" transform="scale(1) rotate(0) translate(4 1595)">
+<title>tidb-server</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1595 2439.5,-1595 2439.5,4 -4,4"/>
+<!-- N1 -->
+<g class="node" id="node1"><title>N1</title>
+<g id="a_node1"><a xlink:title="github.com/pingcap/tidb/server.(*Server).onConn (22313.35kB)">
+<polygon fill="#edd8d5" stroke="#b21400" points="432.5,-1581 320.5,-1581 320.5,-1537 432.5,-1537 432.5,-1581"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1570.6">server</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1561.6">(*Server)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1552.6">onConn</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1543.6">0 of 22313.35kB (67.04%)</text>
+</a>
+</g>
+</g>
+<!-- N6 -->
+<g class="node" id="node6"><title>N6</title>
+<g id="a_node6"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).Run (20245.89kB)">
+<polygon fill="#edd8d5" stroke="#b21800" points="432.5,-1460 320.5,-1460 320.5,-1416 432.5,-1416 432.5,-1460"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1449.6">server</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1440.6">(*clientConn)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1431.6">Run</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1422.6">0 of 20245.89kB (60.83%)</text>
+</a>
+</g>
+</g>
+<!-- N1&#45;&gt;N6 -->
+<g class="edge" id="edge37"><title>N1-&gt;N6</title>
+<g id="a_edge37"><a xlink:title="github.com/pingcap/tidb/server.(*Server).onConn -&gt; github.com/pingcap/tidb/server.(*clientConn).Run (20245.89kB)">
+<path fill="none" stroke="#b21800" stroke-width="4" d="M 376.5 -1537 C 376.5 -1518.51 376.5 -1491.31 376.5 -1470.26"/>
+<polygon fill="#b21800" stroke="#b21800" stroke-width="4" points="380,-1470.19 376.5,-1460.19 373,-1470.19 380,-1470.19"/>
+</a>
+</g>
+<g id="a_edge37-label"><a xlink:title="github.com/pingcap/tidb/server.(*Server).onConn -&gt; github.com/pingcap/tidb/server.(*clientConn).Run (20245.89kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="412" y="-1497.8"> 20245.89kB</text>
+</a>
+</g>
+</g>
+<!-- N23 -->
+<g class="node" id="node23"><title>N23</title>
+<g id="a_node23"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).openSessionAndDoAuth (2067.46kB)">
+<polygon fill="#ede9e5" stroke="#b29a7b" points="554,-1460 451,-1460 451,-1416 554,-1416 554,-1460"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="502.5" y="-1449.6">server</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="502.5" y="-1440.6">(*clientConn)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="502.5" y="-1431.6">openSessionAndDoAuth</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="502.5" y="-1422.6">0 of 2067.46kB (6.21%)</text>
+</a>
+</g>
+</g>
+<!-- N1&#45;&gt;N23 -->
+<g class="edge" id="edge55"><title>N1-&gt;N23</title>
+<g id="a_edge55"><a xlink:title="github.com/pingcap/tidb/server.(*Server).onConn ... github.com/pingcap/tidb/server.(*clientConn).openSessionAndDoAuth (2067.46kB)">
+<path fill="none" stroke="#b29a7b" stroke-dasharray="1px, 5px" d="M 414.701 -1536.8 C 427.147 -1528.94 440.564 -1519.39 451.5 -1509 C 463.898 -1497.22 475.348 -1482.09 484.244 -1468.91"/>
+<polygon fill="#b29a7b" stroke="#b29a7b" points="487.421,-1470.44 489.975,-1460.16 481.566,-1466.61 487.421,-1470.44"/>
+</a>
+</g>
+<g id="a_edge55-label"><a xlink:title="github.com/pingcap/tidb/server.(*Server).onConn ... github.com/pingcap/tidb/server.(*clientConn).openSessionAndDoAuth (2067.46kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="496.5" y="-1497.8"> 2067.46kB</text>
+</a>
+</g>
+</g>
+<!-- N2 -->
+<g class="node" id="node2"><title>N2</title>
+<g id="a_node2"><a xlink:title="github.com/pingcap/tidb/session.(*session).ExecuteStmt (14746.75kB)">
+<polygon fill="#eddad5" stroke="#b22600" points="432.5,-1079 320.5,-1079 320.5,-1035 432.5,-1035 432.5,-1079"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1068.6">session</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1059.6">(*session)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1050.6">ExecuteStmt</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1041.6">0 of 14746.75kB (44.31%)</text>
+</a>
+</g>
+</g>
+<!-- N3 -->
+<g class="node" id="node3"><title>N3</title>
+<g id="a_node3"><a xlink:title="github.com/pingcap/tidb/planner/core.(*PlanBuilder).buildValuesListOfInsert (7222.06kB)">
+<polygon fill="#edded5" stroke="#b24100" points="889.5,-984 645.5,-984 645.5,-872 889.5,-872 889.5,-984"/>
+<text font-family="Times New Roman,serif" font-size="24px" text-anchor="middle" x="767.5" y="-960.8">core</text>
+<text font-family="Times New Roman,serif" font-size="24px" text-anchor="middle" x="767.5" y="-934.8">(*PlanBuilder)</text>
+<text font-family="Times New Roman,serif" font-size="24px" text-anchor="middle" x="767.5" y="-908.8">buildValuesListOfInsert</text>
+<text font-family="Times New Roman,serif" font-size="24px" text-anchor="middle" x="767.5" y="-882.8">7222.06kB (21.70%)</text>
+</a>
+</g>
+</g>
+<!-- N2&#45;&gt;N3 -->
+<g class="edge" id="edge41"><title>N2-&gt;N3</title>
+<g id="a_edge41"><a xlink:title="github.com/pingcap/tidb/session.(*session).ExecuteStmt ... github.com/pingcap/tidb/planner/core.(*PlanBuilder).buildValuesListOfInsert (7222.06kB)">
+<path fill="none" stroke="#b24100" stroke-dasharray="1px, 5px" stroke-width="2" d="M 432.521 -1037.8 C 485.36 -1020.64 566.563 -994.266 635.785 -971.782"/>
+<polygon fill="#b24100" stroke="#b24100" stroke-width="2" points="637.039,-975.055 645.469,-968.637 634.877,-968.397 637.039,-975.055"/>
+</a>
+</g>
+<g id="a_edge41-label"><a xlink:title="github.com/pingcap/tidb/session.(*session).ExecuteStmt ... github.com/pingcap/tidb/planner/core.(*PlanBuilder).buildValuesListOfInsert (7222.06kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="569.5" y="-1005.8"> 7222.06kB</text>
+</a>
+</g>
+</g>
+<!-- N11 -->
+<g class="node" id="node11"><title>N11</title>
+<g id="a_node11"><a xlink:title="github.com/pingcap/tidb/executor.insertRows (6497.31kB)">
+<polygon fill="#edded6" stroke="#b24704" points="376,-946 269,-946 269,-910 376,-910 376,-946"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-935.1">executor</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-926.1">insertRows</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-917.1">0 of 6497.31kB (19.52%)</text>
+</a>
+</g>
+</g>
+<!-- N2&#45;&gt;N11 -->
+<g class="edge" id="edge42"><title>N2-&gt;N11</title>
+<g id="a_edge42"><a xlink:title="github.com/pingcap/tidb/session.(*session).ExecuteStmt ... github.com/pingcap/tidb/executor.insertRows (6497.31kB)">
+<path fill="none" stroke="#b24704" stroke-dasharray="1px, 5px" d="M 362.159 -1034.61 C 358.738 -1029.02 355.277 -1022.9 352.5 -1017 C 343.187 -997.224 335.332 -973.746 329.999 -956.016"/>
+<polygon fill="#b24704" stroke="#b24704" points="333.327,-954.926 327.158,-946.312 326.609,-956.893 333.327,-954.926"/>
+</a>
+</g>
+<g id="a_edge42-label"><a xlink:title="github.com/pingcap/tidb/session.(*session).ExecuteStmt ... github.com/pingcap/tidb/executor.insertRows (6497.31kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="384.5" y="-1005.8"> 6497.31kB</text>
+</a>
+</g>
+</g>
+<!-- N36 -->
+<g class="node" id="node36"><title>N36</title>
+<g id="a_node36"><a xlink:title="github.com/pingcap/tidb/session.(*session).loadCommonGlobalVariablesIfNeeded (1027.38kB)">
+<polygon fill="#edebe9" stroke="#b2a896" points="540.5,-950 394.5,-950 394.5,-906 540.5,-906 540.5,-950"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="467.5" y="-939.6">session</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="467.5" y="-930.6">(*session)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="467.5" y="-921.6">loadCommonGlobalVariablesIfNeeded</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="467.5" y="-912.6">0 of 1027.38kB (3.09%)</text>
+</a>
+</g>
+</g>
+<!-- N2&#45;&gt;N36 -->
+<g class="edge" id="edge62"><title>N2-&gt;N36</title>
+<g id="a_edge62"><a xlink:title="github.com/pingcap/tidb/session.(*session).ExecuteStmt -&gt; github.com/pingcap/tidb/session.(*session).loadCommonGlobalVariablesIfNeeded (1027.38kB)">
+<path fill="none" stroke="#b2a896" d="M 400.463 -1034.73 C 406.039 -1029.23 411.733 -1023.12 416.5 -1017 C 430.414 -999.132 443.187 -977.081 452.47 -959.523"/>
+<polygon fill="#b2a896" stroke="#b2a896" points="455.763,-960.775 457.253,-950.285 449.547,-957.556 455.763,-960.775"/>
+</a>
+</g>
+<g id="a_edge62-label"><a xlink:title="github.com/pingcap/tidb/session.(*session).ExecuteStmt -&gt; github.com/pingcap/tidb/session.(*session).loadCommonGlobalVariablesIfNeeded (1027.38kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="458.5" y="-1005.8"> 1027.38kB</text>
+</a>
+</g>
+</g>
+<!-- NN3_0 -->
+<g class="node" id="NN3_0"><title>NN3_0</title>
+<g id="a_NN3_0"><a xlink:title="5633.03kB">
+<polygon fill="#f8f8f8" stroke="black" points="956.5,-799 906.5,-799 902.5,-795 902.5,-763 952.5,-763 956.5,-767 956.5,-799"/>
+<polyline fill="none" stroke="black" points="952.5,-795 902.5,-795"/>
+<polyline fill="none" stroke="black" points="952.5,-795 952.5,-763"/>
+<polyline fill="none" stroke="black" points="952.5,-795 956.5,-799"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="929.5" y="-779.1">192B</text>
+</a>
+</g>
+</g>
+<!-- N3&#45;&gt;NN3_0 -->
+<g class="edge" id="edge1"><title>N3-&gt;NN3_0</title>
+<g id="a_edge1"><a xlink:title="5633.03kB">
+<path fill="none" stroke="black" d="M 875.996 -871.921 C 882.994 -866.358 889.591 -860.383 895.5 -854 C 907.403 -841.142 915.854 -823.366 921.353 -808.695"/>
+<polygon fill="black" stroke="black" points="924.7,-809.727 924.695,-799.132 918.092,-807.417 924.7,-809.727"/>
+</a>
+</g>
+<g id="a_edge1-label"><a xlink:title="5633.03kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="938.5" y="-842.8"> 5633.03kB</text>
+</a>
+</g>
+</g>
+<!-- NN3_1 -->
+<g class="node" id="NN3_1"><title>NN3_1</title>
+<g id="a_NN3_1"><a xlink:title="548.84kB">
+<polygon fill="#f8f8f8" stroke="black" points="713.5,-799 663.5,-799 659.5,-795 659.5,-763 709.5,-763 713.5,-767 713.5,-799"/>
+<polyline fill="none" stroke="black" points="709.5,-795 659.5,-795"/>
+<polyline fill="none" stroke="black" points="709.5,-795 709.5,-763"/>
+<polyline fill="none" stroke="black" points="709.5,-795 713.5,-799"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="686.5" y="-779.1">72kB</text>
+</a>
+</g>
+</g>
+<!-- N3&#45;&gt;NN3_1 -->
+<g class="edge" id="edge2"><title>N3-&gt;NN3_1</title>
+<g id="a_edge2"><a xlink:title="548.84kB">
+<path fill="none" stroke="black" d="M 716.436 -871.806 C 712.389 -866.024 708.654 -860.044 705.5 -854 C 698.207 -840.027 693.551 -823.032 690.674 -809.064"/>
+<polygon fill="black" stroke="black" points="694.085,-808.259 688.807,-799.072 687.204,-809.544 694.085,-808.259"/>
+</a>
+</g>
+<g id="a_edge2-label"><a xlink:title="548.84kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="734.5" y="-842.8"> 548.84kB</text>
+</a>
+</g>
+</g>
+<!-- NN3_2 -->
+<g class="node" id="NN3_2"><title>NN3_2</title>
+<g id="a_NN3_2"><a xlink:title="528.17kB">
+<polygon fill="#f8f8f8" stroke="black" points="794.5,-799 744.5,-799 740.5,-795 740.5,-763 790.5,-763 794.5,-767 794.5,-799"/>
+<polyline fill="none" stroke="black" points="790.5,-795 740.5,-795"/>
+<polyline fill="none" stroke="black" points="790.5,-795 790.5,-763"/>
+<polyline fill="none" stroke="black" points="790.5,-795 794.5,-799"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="767.5" y="-779.1">32kB</text>
+</a>
+</g>
+</g>
+<!-- N3&#45;&gt;NN3_2 -->
+<g class="edge" id="edge3"><title>N3-&gt;NN3_2</title>
+<g id="a_edge3"><a xlink:title="528.17kB">
+<path fill="none" stroke="black" d="M 767.5 -871.768 C 767.5 -850.427 767.5 -826.966 767.5 -809.382"/>
+<polygon fill="black" stroke="black" points="771,-809.264 767.5,-799.264 764,-809.264 771,-809.264"/>
+</a>
+</g>
+<g id="a_edge3-label"><a xlink:title="528.17kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="796.5" y="-842.8"> 528.17kB</text>
+</a>
+</g>
+</g>
+<!-- NN3_3 -->
+<g class="node" id="NN3_3"><title>NN3_3</title>
+<g id="a_NN3_3"><a xlink:title="512.02kB">
+<polygon fill="#f8f8f8" stroke="black" points="875.5,-799 825.5,-799 821.5,-795 821.5,-763 871.5,-763 875.5,-767 875.5,-799"/>
+<polyline fill="none" stroke="black" points="871.5,-795 821.5,-795"/>
+<polyline fill="none" stroke="black" points="871.5,-795 871.5,-763"/>
+<polyline fill="none" stroke="black" points="871.5,-795 875.5,-799"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="848.5" y="-779.1">48B</text>
+</a>
+</g>
+</g>
+<!-- N3&#45;&gt;NN3_3 -->
+<g class="edge" id="edge4"><title>N3-&gt;NN3_3</title>
+<g id="a_edge4"><a xlink:title="512.02kB">
+<path fill="none" stroke="black" d="M 815.528 -871.922 C 819.546 -866.071 823.29 -860.045 826.5 -854 C 833.974 -839.925 839.319 -822.926 842.867 -808.98"/>
+<polygon fill="black" stroke="black" points="846.33,-809.548 845.236,-799.01 839.519,-807.93 846.33,-809.548"/>
+</a>
+</g>
+<g id="a_edge4-label"><a xlink:title="512.02kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="862.5" y="-842.8"> 512.02kB</text>
+</a>
+</g>
+</g>
+<!-- N4 -->
+<g class="node" id="node4"><title>N4</title>
+<g id="a_node4"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).handleQuery (17815.97kB)">
+<polygon fill="#edd9d5" stroke="#b21e00" points="432.5,-1327 320.5,-1327 320.5,-1283 432.5,-1283 432.5,-1327"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1316.6">server</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1307.6">(*clientConn)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1298.6">handleQuery</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1289.6">0 of 17815.97kB (53.53%)</text>
+</a>
+</g>
+</g>
+<!-- N9 -->
+<g class="node" id="node9"><title>N9</title>
+<g id="a_node9"><a xlink:title="github.com/pingcap/parser.yyParse (4096.60kB)">
+<polygon fill="#ede5de" stroke="#b27744" points="302.5,-1210 132.5,-1210 132.5,-1130 302.5,-1130 302.5,-1210"/>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="217.5" y="-1193.2">parser</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="217.5" y="-1175.2">yyParse</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="217.5" y="-1157.2">1536.13kB (4.62%)</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="217.5" y="-1139.2">of 4096.60kB (12.31%)</text>
+</a>
+</g>
+</g>
+<!-- N4&#45;&gt;N9 -->
+<g class="edge" id="edge46"><title>N4-&gt;N9</title>
+<g id="a_edge46"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).handleQuery ... github.com/pingcap/parser.yyParse (4096.60kB)">
+<path fill="none" stroke="#b27744" stroke-dasharray="1px, 5px" d="M 351.306 -1282.93 C 330.106 -1265.19 299.037 -1239.2 272.173 -1216.73"/>
+<polygon fill="#b27744" stroke="#b27744" points="274.27,-1213.92 264.354,-1210.19 269.778,-1219.29 274.27,-1213.92"/>
+</a>
+</g>
+<g id="a_edge46-label"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).handleQuery ... github.com/pingcap/parser.yyParse (4096.60kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="334.5" y="-1231.8"> 4096.60kB</text>
+</a>
+</g>
+</g>
+<!-- N10 -->
+<g class="node" id="node10"><title>N10</title>
+<g id="a_node10"><a xlink:title="github.com/pingcap/tidb/server.(*TiDBContext).ExecuteStmt (14746.75kB)">
+<polygon fill="#eddad5" stroke="#b22600" points="432.5,-1192 320.5,-1192 320.5,-1148 432.5,-1148 432.5,-1192"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1181.6">server</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1172.6">(*TiDBContext)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1163.6">ExecuteStmt</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="376.5" y="-1154.6">0 of 14746.75kB (44.31%)</text>
+</a>
+</g>
+</g>
+<!-- N4&#45;&gt;N10 -->
+<g class="edge" id="edge40"><title>N4-&gt;N10</title>
+<g id="a_edge40"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).handleQuery ... github.com/pingcap/tidb/server.(*TiDBContext).ExecuteStmt (13719.37kB)">
+<path fill="none" stroke="#b22900" stroke-dasharray="1px, 5px" stroke-width="3" d="M 376.5 -1282.93 C 376.5 -1261.26 376.5 -1227.28 376.5 -1202.44"/>
+<polygon fill="#b22900" stroke="#b22900" stroke-width="3" points="380,-1202.42 376.5,-1192.42 373,-1202.42 380,-1202.42"/>
+</a>
+</g>
+<g id="a_edge40-label"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).handleQuery ... github.com/pingcap/tidb/server.(*TiDBContext).ExecuteStmt (13719.37kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="412" y="-1231.8"> 13719.37kB</text>
+</a>
+</g>
+</g>
+<!-- N5 -->
+<g class="node" id="node5"><title>N5</title>
+<g id="a_node5"><a xlink:title="runtime.main (5435.13kB)">
+<polygon fill="#ede1d9" stroke="#b25d20" points="990,-1577 883,-1577 883,-1541 990,-1541 990,-1577"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1566.1">runtime</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1557.1">main</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1548.1">0 of 5435.13kB (16.33%)</text>
+</a>
+</g>
+</g>
+<!-- N13 -->
+<g class="node" id="node13"><title>N13</title>
+<g id="a_node13"><a xlink:title="runtime.doInit (2562.34kB)">
+<polygon fill="#ede8e4" stroke="#b2926d" points="1114,-1456 1011,-1456 1011,-1420 1114,-1420 1114,-1456"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1062.5" y="-1445.1">runtime</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1062.5" y="-1436.1">doInit</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1062.5" y="-1427.1">0 of 2562.34kB (7.70%)</text>
+</a>
+</g>
+</g>
+<!-- N5&#45;&gt;N13 -->
+<g class="edge" id="edge51"><title>N5-&gt;N13</title>
+<g id="a_edge51"><a xlink:title="runtime.main -&gt; runtime.doInit (2562.34kB)">
+<path fill="none" stroke="#b2926d" d="M 963.541 -1540.86 C 976.528 -1532.05 991.956 -1520.72 1004.5 -1509 C 1019.01 -1495.43 1033.28 -1478.29 1044.03 -1464.36"/>
+<polygon fill="#b2926d" stroke="#b2926d" points="1046.99,-1466.25 1050.24,-1456.16 1041.41,-1462.02 1046.99,-1466.25"/>
+</a>
+</g>
+<g id="a_edge51-label"><a xlink:title="runtime.main -&gt; runtime.doInit (2562.34kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1050.5" y="-1497.8"> 2562.34kB</text>
+</a>
+</g>
+</g>
+<!-- N21 -->
+<g class="node" id="node21"><title>N21</title>
+<g id="a_node21"><a xlink:title="main.main (2872.80kB)">
+<polygon fill="#ede8e2" stroke="#b28d65" points="988,-1456 885,-1456 885,-1420 988,-1420 988,-1456"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1445.1">main</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1436.1">main</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1427.1">0 of 2872.80kB (8.63%)</text>
+</a>
+</g>
+</g>
+<!-- N5&#45;&gt;N21 -->
+<g class="edge" id="edge50"><title>N5-&gt;N21</title>
+<g id="a_edge50"><a xlink:title="runtime.main -&gt; main.main (2872.80kB)">
+<path fill="none" stroke="#b28d65" d="M 936.5 -1540.95 C 936.5 -1521.42 936.5 -1489.16 936.5 -1466.16"/>
+<polygon fill="#b28d65" stroke="#b28d65" points="940,-1466.02 936.5,-1456.02 933,-1466.02 940,-1466.02"/>
+</a>
+</g>
+<g id="a_edge50-label"><a xlink:title="runtime.main -&gt; main.main (2872.80kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="968.5" y="-1497.8"> 2872.80kB</text>
+</a>
+</g>
+</g>
+<!-- N6&#45;&gt;N4 -->
+<g class="edge" id="edge38"><title>N6-&gt;N4</title>
+<g id="a_edge38"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).Run ... github.com/pingcap/tidb/server.(*clientConn).handleQuery (17815.97kB)">
+<path fill="none" stroke="#b21e00" stroke-dasharray="1px, 5px" stroke-width="3" d="M 376.5 -1415.95 C 376.5 -1394.78 376.5 -1361.89 376.5 -1337.59"/>
+<polygon fill="#b21e00" stroke="#b21e00" stroke-width="3" points="380,-1337.43 376.5,-1327.43 373,-1337.43 380,-1337.43"/>
+</a>
+</g>
+<g id="a_edge38-label"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).Run ... github.com/pingcap/tidb/server.(*clientConn).handleQuery (17815.97kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="412" y="-1370.8"> 17815.97kB</text>
+</a>
+</g>
+</g>
+<!-- N14 -->
+<g class="node" id="node14"><title>N14</title>
+<g id="a_node14"><a xlink:title="github.com/pingcap/tidb/server.(*packetIO).readOnePacket (2429.92kB)">
+<polygon fill="#ede9e4" stroke="#b29471" points="167,-1349 8,-1349 8,-1261 167,-1261 167,-1349"/>
+<text font-family="Times New Roman,serif" font-size="18px" text-anchor="middle" x="87.5" y="-1330.6">server</text>
+<text font-family="Times New Roman,serif" font-size="18px" text-anchor="middle" x="87.5" y="-1310.6">(*packetIO)</text>
+<text font-family="Times New Roman,serif" font-size="18px" text-anchor="middle" x="87.5" y="-1290.6">readOnePacket</text>
+<text font-family="Times New Roman,serif" font-size="18px" text-anchor="middle" x="87.5" y="-1270.6">2429.92kB (7.30%)</text>
+</a>
+</g>
+</g>
+<!-- N6&#45;&gt;N14 -->
+<g class="edge" id="edge53"><title>N6-&gt;N14</title>
+<g id="a_edge53"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).Run ... github.com/pingcap/tidb/server.(*packetIO).readOnePacket (2429.92kB)">
+<path fill="none" stroke="#b29471" stroke-dasharray="1px, 5px" d="M 330.067 -1415.95 C 288.76 -1397.23 227.208 -1369.33 176.446 -1346.32"/>
+<polygon fill="#b29471" stroke="#b29471" points="177.654,-1343.02 167.101,-1342.08 174.764,-1349.4 177.654,-1343.02"/>
+</a>
+</g>
+<g id="a_edge53-label"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).Run ... github.com/pingcap/tidb/server.(*packetIO).readOnePacket (2429.92kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="281.5" y="-1370.8"> 2429.92kB</text>
+</a>
+</g>
+</g>
+<!-- N7 -->
+<g class="node" id="node7"><title>N7</title>
+<g id="a_node7"><a xlink:title="github.com/pingcap/tidb/kv.(*memdbArena).enlarge (3424.73kB)">
+<polygon fill="#ede6e0" stroke="#b28456" points="418,-183 227,-183 227,-87 418,-87 418,-183"/>
+<text font-family="Times New Roman,serif" font-size="20px" text-anchor="middle" x="322.5" y="-163">kv</text>
+<text font-family="Times New Roman,serif" font-size="20px" text-anchor="middle" x="322.5" y="-141">(*memdbArena)</text>
+<text font-family="Times New Roman,serif" font-size="20px" text-anchor="middle" x="322.5" y="-119">enlarge</text>
+<text font-family="Times New Roman,serif" font-size="20px" text-anchor="middle" x="322.5" y="-97">3424.73kB (10.29%)</text>
+</a>
+</g>
+</g>
+<!-- NN7_0 -->
+<g class="node" id="NN7_0"><title>NN7_0</title>
+<g id="a_NN7_0"><a xlink:title="1040.08kB">
+<polygon fill="#f8f8f8" stroke="black" points="219.5,-36 169.5,-36 165.5,-32 165.5,0 215.5,0 219.5,-4 219.5,-36"/>
+<polyline fill="none" stroke="black" points="215.5,-32 165.5,-32"/>
+<polyline fill="none" stroke="black" points="215.5,-32 215.5,0"/>
+<polyline fill="none" stroke="black" points="215.5,-32 219.5,-36"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="192.5" y="-16.1">16kB</text>
+</a>
+</g>
+</g>
+<!-- N7&#45;&gt;NN7_0 -->
+<g class="edge" id="edge5"><title>N7-&gt;NN7_0</title>
+<g id="a_edge5"><a xlink:title="1040.08kB">
+<path fill="none" stroke="black" d="M 228.808 -86.924 C 222.122 -81.4458 215.901 -75.4739 210.5 -69 C 205.015 -62.4247 201.141 -54.045 198.431 -46.0336"/>
+<polygon fill="black" stroke="black" points="201.739,-44.8726 195.587,-36.2463 195.017,-46.8258 201.739,-44.8726"/>
+</a>
+</g>
+<g id="a_edge5-label"><a xlink:title="1040.08kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="242.5" y="-57.8"> 1040.08kB</text>
+</a>
+</g>
+</g>
+<!-- NN7_1 -->
+<g class="node" id="NN7_1"><title>NN7_1</title>
+<g id="a_NN7_1"><a xlink:title="1030.01kB">
+<polygon fill="#f8f8f8" stroke="black" points="306.5,-36 256.5,-36 252.5,-32 252.5,0 302.5,0 306.5,-4 306.5,-36"/>
+<polyline fill="none" stroke="black" points="302.5,-32 252.5,-32"/>
+<polyline fill="none" stroke="black" points="302.5,-32 302.5,0"/>
+<polyline fill="none" stroke="black" points="302.5,-32 306.5,-36"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="279.5" y="-16.1">4kB..8kB</text>
+</a>
+</g>
+</g>
+<!-- N7&#45;&gt;NN7_1 -->
+<g class="edge" id="edge6"><title>N7-&gt;NN7_1</title>
+<g id="a_edge6"><a xlink:title="1030.01kB">
+<path fill="none" stroke="black" d="M 287.92 -86.8427 C 284.931 -81.0507 282.347 -75.0385 280.5 -69 C 278.291 -61.7767 277.467 -53.6884 277.343 -46.1571"/>
+<polygon fill="black" stroke="black" points="280.845,-46.1027 277.562,-36.0295 273.847,-45.9516 280.845,-46.1027"/>
+</a>
+</g>
+<g id="a_edge6-label"><a xlink:title="1030.01kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="312.5" y="-57.8"> 1030.01kB</text>
+</a>
+</g>
+</g>
+<!-- NN7_2 -->
+<g class="node" id="NN7_2"><title>NN7_2</title>
+<g id="a_NN7_2"><a xlink:title="809.97kB">
+<polygon fill="#f8f8f8" stroke="black" points="393.5,-36 343.5,-36 339.5,-32 339.5,0 389.5,0 393.5,-4 393.5,-36"/>
+<polyline fill="none" stroke="black" points="389.5,-32 339.5,-32"/>
+<polyline fill="none" stroke="black" points="389.5,-32 389.5,0"/>
+<polyline fill="none" stroke="black" points="389.5,-32 393.5,-36"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="366.5" y="-16.1">512kB</text>
+</a>
+</g>
+</g>
+<!-- N7&#45;&gt;NN7_2 -->
+<g class="edge" id="edge7"><title>N7-&gt;NN7_2</title>
+<g id="a_edge7"><a xlink:title="809.97kB">
+<path fill="none" stroke="black" d="M 340.523 -86.8933 C 345.9 -72.8399 351.605 -57.9296 356.295 -45.6727"/>
+<polygon fill="black" stroke="black" points="359.661,-46.6684 359.966,-36.078 353.123,-44.167 359.661,-46.6684"/>
+</a>
+</g>
+<g id="a_edge7-label"><a xlink:title="809.97kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="381.5" y="-57.8"> 809.97kB</text>
+</a>
+</g>
+</g>
+<!-- NN7_3 -->
+<g class="node" id="NN7_3"><title>NN7_3</title>
+<g id="a_NN7_3"><a xlink:title="544.67kB">
+<polygon fill="#f8f8f8" stroke="black" points="474.5,-36 424.5,-36 420.5,-32 420.5,0 470.5,0 474.5,-4 474.5,-36"/>
+<polyline fill="none" stroke="black" points="470.5,-32 420.5,-32"/>
+<polyline fill="none" stroke="black" points="470.5,-32 470.5,0"/>
+<polyline fill="none" stroke="black" points="470.5,-32 474.5,-36"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="447.5" y="-16.1">64kB</text>
+</a>
+</g>
+</g>
+<!-- N7&#45;&gt;NN7_3 -->
+<g class="edge" id="edge8"><title>N7-&gt;NN7_3</title>
+<g id="a_edge8"><a xlink:title="544.67kB">
+<path fill="none" stroke="black" d="M 394.963 -86.8156 C 401.866 -81.1563 408.513 -75.1803 414.5 -69 C 421.409 -61.8684 427.754 -53.1022 432.996 -44.9125"/>
+<polygon fill="black" stroke="black" points="435.996,-46.7145 438.224,-36.3566 430.023,-43.0645 435.996,-46.7145"/>
+</a>
+</g>
+<g id="a_edge8-label"><a xlink:title="544.67kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="455.5" y="-57.8"> 544.67kB</text>
+</a>
+</g>
+</g>
+<!-- N8 -->
+<g class="node" id="node8"><title>N8</title>
+<g id="a_node8"><a xlink:title="github.com/pingcap/tidb/table/tables.(*TableCommon).AddRecord (4960.88kB)">
+<polygon fill="#ede3db" stroke="#b2672d" points="263.5,-595 93.5,-595 93.5,-497 263.5,-497 263.5,-595"/>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="178.5" y="-578.2">tables</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="178.5" y="-560.2">(*TableCommon)</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="178.5" y="-542.2">AddRecord</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="178.5" y="-524.2">1536.15kB (4.62%)</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="178.5" y="-506.2">of 4960.88kB (14.90%)</text>
+</a>
+</g>
+</g>
+<!-- NN8_0 -->
+<g class="node" id="NN8_0"><title>NN8_0</title>
+<g id="a_NN8_0"><a xlink:title="512.14kB">
+<polygon fill="#f8f8f8" stroke="black" points="124.5,-446 74.5,-446 70.5,-442 70.5,-410 120.5,-410 124.5,-414 124.5,-446"/>
+<polyline fill="none" stroke="black" points="120.5,-442 70.5,-442"/>
+<polyline fill="none" stroke="black" points="120.5,-442 120.5,-410"/>
+<polyline fill="none" stroke="black" points="120.5,-442 124.5,-446"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="97.5" y="-426.1">288B..8kB</text>
+</a>
+</g>
+</g>
+<!-- N8&#45;&gt;NN8_0 -->
+<g class="edge" id="edge9"><title>N8-&gt;NN8_0</title>
+<g id="a_edge9"><a xlink:title="512.14kB">
+<path fill="none" stroke="black" d="M 129.216 -496.627 C 124.597 -490.928 120.25 -484.999 116.5 -479 C 112.119 -471.992 108.488 -463.813 105.615 -456.125"/>
+<polygon fill="black" stroke="black" points="108.844,-454.753 102.275,-446.441 102.227,-457.035 108.844,-454.753"/>
+</a>
+</g>
+<g id="a_edge9-label"><a xlink:title="512.14kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="145.5" y="-467.8"> 512.14kB</text>
+</a>
+</g>
+</g>
+<!-- NN8_1 -->
+<g class="node" id="NN8_1"><title>NN8_1</title>
+<g id="a_NN8_1"><a xlink:title="512.01kB">
+<polygon fill="#f8f8f8" stroke="black" points="205.5,-446 155.5,-446 151.5,-442 151.5,-410 201.5,-410 205.5,-414 205.5,-446"/>
+<polyline fill="none" stroke="black" points="201.5,-442 151.5,-442"/>
+<polyline fill="none" stroke="black" points="201.5,-442 201.5,-410"/>
+<polyline fill="none" stroke="black" points="201.5,-442 205.5,-446"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="178.5" y="-426.1">16B</text>
+</a>
+</g>
+</g>
+<!-- N8&#45;&gt;NN8_1 -->
+<g class="edge" id="edge10"><title>N8-&gt;NN8_1</title>
+<g id="a_edge10"><a xlink:title="512.01kB">
+<path fill="none" stroke="black" d="M 178.5 -496.813 C 178.5 -482.992 178.5 -468.406 178.5 -456.317"/>
+<polygon fill="black" stroke="black" points="182,-456.01 178.5,-446.01 175,-456.01 182,-456.01"/>
+</a>
+</g>
+<g id="a_edge10-label"><a xlink:title="512.01kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="207.5" y="-467.8"> 512.01kB</text>
+</a>
+</g>
+</g>
+<!-- NN8_2 -->
+<g class="node" id="NN8_2"><title>NN8_2</title>
+<g id="a_NN8_2"><a xlink:title="512kB">
+<polygon fill="#f8f8f8" stroke="black" points="286.5,-446 236.5,-446 232.5,-442 232.5,-410 282.5,-410 286.5,-414 286.5,-446"/>
+<polyline fill="none" stroke="black" points="282.5,-442 232.5,-442"/>
+<polyline fill="none" stroke="black" points="282.5,-442 282.5,-410"/>
+<polyline fill="none" stroke="black" points="282.5,-442 286.5,-446"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="259.5" y="-426.1">8B</text>
+</a>
+</g>
+</g>
+<!-- N8&#45;&gt;NN8_2 -->
+<g class="edge" id="edge11"><title>N8-&gt;NN8_2</title>
+<g id="a_edge11"><a xlink:title="512kB">
+<path fill="none" stroke="black" d="M 224.744 -496.628 C 229.317 -490.884 233.673 -484.945 237.5 -479 C 242.12 -471.823 246.211 -463.513 249.573 -455.753"/>
+<polygon fill="black" stroke="black" points="252.875,-456.925 253.428,-446.345 246.398,-454.271 252.875,-456.925"/>
+</a>
+</g>
+<g id="a_edge11-label"><a xlink:title="512kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="266.5" y="-467.8"> 512kB</text>
+</a>
+</g>
+</g>
+<!-- N43 -->
+<g class="node" id="node43"><title>N43</title>
+<g id="a_node43"><a xlink:title="github.com/pingcap/tidb/kv.(*memdb).set (3424.73kB)">
+<polygon fill="#ede6e0" stroke="#b28456" points="376,-373 269,-373 269,-329 376,-329 376,-373"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-362.6">kv</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-353.6">(*memdb)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-344.6">set</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-335.6">0 of 3424.73kB (10.29%)</text>
+</a>
+</g>
+</g>
+<!-- N8&#45;&gt;N43 -->
+<g class="edge" id="edge49"><title>N8-&gt;N43</title>
+<g id="a_edge49"><a xlink:title="github.com/pingcap/tidb/table/tables.(*TableCommon).AddRecord ... github.com/pingcap/tidb/kv.(*memdb).set (3424.73kB)">
+<path fill="none" stroke="#b28456" stroke-dasharray="1px, 5px" d="M 263.733 -505.002 C 273.82 -497.493 283.129 -488.847 290.5 -479 C 311.31 -451.199 318.679 -411.368 321.238 -383.756"/>
+<polygon fill="#b28456" stroke="#b28456" points="324.753,-383.7 322.023,-373.462 317.773,-383.167 324.753,-383.7"/>
+</a>
+</g>
+<g id="a_edge49-label"><a xlink:title="github.com/pingcap/tidb/table/tables.(*TableCommon).AddRecord ... github.com/pingcap/tidb/kv.(*memdb).set (3424.73kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="350.5" y="-424.3"> 3424.73kB</text>
+</a>
+</g>
+</g>
+<!-- NN9_0 -->
+<g class="node" id="NN9_0"><title>NN9_0</title>
+<g id="a_NN9_0"><a xlink:title="1024.06kB">
+<polygon fill="#f8f8f8" stroke="black" points="215.5,-1075 165.5,-1075 161.5,-1071 161.5,-1039 211.5,-1039 215.5,-1043 215.5,-1075"/>
+<polyline fill="none" stroke="black" points="211.5,-1071 161.5,-1071"/>
+<polyline fill="none" stroke="black" points="211.5,-1071 211.5,-1039"/>
+<polyline fill="none" stroke="black" points="211.5,-1071 215.5,-1075"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="188.5" y="-1055.1">64B</text>
+</a>
+</g>
+</g>
+<!-- N9&#45;&gt;NN9_0 -->
+<g class="edge" id="edge12"><title>N9-&gt;NN9_0</title>
+<g id="a_edge12"><a xlink:title="1024.06kB">
+<path fill="none" stroke="black" d="M 195.594 -1129.98 C 193.11 -1124.1 190.953 -1118 189.5 -1112 C 187.452 -1103.54 186.758 -1094.12 186.704 -1085.54"/>
+<polygon fill="black" stroke="black" points="190.209,-1085.34 186.926,-1075.27 183.211,-1085.19 190.209,-1085.34"/>
+</a>
+</g>
+<g id="a_edge12-label"><a xlink:title="1024.06kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="221.5" y="-1100.8"> 1024.06kB</text>
+</a>
+</g>
+</g>
+<!-- NN9_1 -->
+<g class="node" id="NN9_1"><title>NN9_1</title>
+<g id="a_NN9_1"><a xlink:title="512.07kB">
+<polygon fill="#f8f8f8" stroke="black" points="302.5,-1075 252.5,-1075 248.5,-1071 248.5,-1039 298.5,-1039 302.5,-1043 302.5,-1075"/>
+<polyline fill="none" stroke="black" points="298.5,-1071 248.5,-1071"/>
+<polyline fill="none" stroke="black" points="298.5,-1071 298.5,-1039"/>
+<polyline fill="none" stroke="black" points="298.5,-1071 302.5,-1075"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="275.5" y="-1055.1">144B</text>
+</a>
+</g>
+</g>
+<!-- N9&#45;&gt;NN9_1 -->
+<g class="edge" id="edge13"><title>N9-&gt;NN9_1</title>
+<g id="a_edge13"><a xlink:title="512.07kB">
+<path fill="none" stroke="black" d="M 243.409 -1129.97 C 246.971 -1124.05 250.448 -1117.93 253.5 -1112 C 257.941 -1103.37 262.142 -1093.62 265.66 -1084.81"/>
+<polygon fill="black" stroke="black" points="268.969,-1085.96 269.318,-1075.37 262.442,-1083.43 268.969,-1085.96"/>
+</a>
+</g>
+<g id="a_edge13-label"><a xlink:title="512.07kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="289.5" y="-1100.8"> 512.07kB</text>
+</a>
+</g>
+</g>
+<!-- N12 -->
+<g class="node" id="node12"><title>N12</title>
+<g id="a_node12"><a xlink:title="github.com/pingcap/tidb/types/parser_driver.newValueExpr (2560.47kB)">
+<polygon fill="#ede8e4" stroke="#b2926d" points="159,-962 0,-962 0,-894 159,-894 159,-962"/>
+<text font-family="Times New Roman,serif" font-size="18px" text-anchor="middle" x="79.5" y="-943.6">parser_driver</text>
+<text font-family="Times New Roman,serif" font-size="18px" text-anchor="middle" x="79.5" y="-923.6">newValueExpr</text>
+<text font-family="Times New Roman,serif" font-size="18px" text-anchor="middle" x="79.5" y="-903.6">2560.47kB (7.69%)</text>
+</a>
+</g>
+</g>
+<!-- N9&#45;&gt;N12 -->
+<g class="edge" id="edge52"><title>N9-&gt;N12</title>
+<g id="a_edge52"><a xlink:title="github.com/pingcap/parser.yyParse -&gt; github.com/pingcap/tidb/types/parser_driver.newValueExpr (2560.47kB)">
+<path fill="none" stroke="#b2926d" d="M 137.918 -1129.98 C 118.519 -1116.56 100.047 -1099.61 88.5 -1079 C 70.3386 -1046.59 69.5973 -1003.82 72.5154 -972.251"/>
+<polygon fill="#b2926d" stroke="#b2926d" points="76.0281,-972.322 73.6255,-962.003 69.0688,-971.568 76.0281,-972.322"/>
+</a>
+</g>
+<g id="a_edge52-label"><a xlink:title="github.com/pingcap/parser.yyParse -&gt; github.com/pingcap/tidb/types/parser_driver.newValueExpr (2560.47kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="120.5" y="-1053.3"> 2560.47kB</text>
+</a>
+</g>
+</g>
+<!-- N10&#45;&gt;N2 -->
+<g class="edge" id="edge39"><title>N10-&gt;N2</title>
+<g id="a_edge39"><a xlink:title="github.com/pingcap/tidb/server.(*TiDBContext).ExecuteStmt -&gt; github.com/pingcap/tidb/session.(*session).ExecuteStmt (14746.75kB)">
+<path fill="none" stroke="#b22600" stroke-width="3" d="M 376.5 -1147.86 C 376.5 -1131.27 376.5 -1107.93 376.5 -1089.2"/>
+<polygon fill="#b22600" stroke="#b22600" stroke-width="3" points="380,-1089.06 376.5,-1079.06 373,-1089.06 380,-1089.06"/>
+</a>
+</g>
+<g id="a_edge39-label"><a xlink:title="github.com/pingcap/tidb/server.(*TiDBContext).ExecuteStmt -&gt; github.com/pingcap/tidb/session.(*session).ExecuteStmt (14746.75kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="412" y="-1100.8"> 14746.75kB</text>
+</a>
+</g>
+</g>
+<!-- N17 -->
+<g class="node" id="node17"><title>N17</title>
+<g id="a_node17"><a xlink:title="github.com/pingcap/tidb/executor.(*InsertValues).fastEvalRow (1536.42kB)">
+<polygon fill="#edeae7" stroke="#b2a289" points="394.5,-821 250.5,-821 250.5,-741 394.5,-741 394.5,-821"/>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="322.5" y="-804.2">executor</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="322.5" y="-786.2">(*InsertValues)</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="322.5" y="-768.2">fastEvalRow</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="322.5" y="-750.2">1536.42kB (4.62%)</text>
+</a>
+</g>
+</g>
+<!-- N11&#45;&gt;N17 -->
+<g class="edge" id="edge58"><title>N11-&gt;N17</title>
+<g id="a_edge58"><a xlink:title="github.com/pingcap/tidb/executor.insertRows -&gt; github.com/pingcap/tidb/executor.(*InsertValues).fastEvalRow (1536.42kB)">
+<path fill="none" stroke="#b2a289" d="M 322.5 -909.797 C 322.5 -890.573 322.5 -858.578 322.5 -831.412"/>
+<polygon fill="#b2a289" stroke="#b2a289" points="326,-831.273 322.5,-821.273 319,-831.273 326,-831.273"/>
+</a>
+</g>
+<g id="a_edge58-label"><a xlink:title="github.com/pingcap/tidb/executor.insertRows -&gt; github.com/pingcap/tidb/executor.(*InsertValues).fastEvalRow (1536.42kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="354.5" y="-842.8"> 1536.42kB</text>
+</a>
+</g>
+</g>
+<!-- N41 -->
+<g class="node" id="node41"><title>N41</title>
+<g id="a_node41"><a xlink:title="github.com/pingcap/tidb/executor.(*InsertExec).exec (4960.88kB)">
+<polygon fill="#ede3db" stroke="#b2672d" points="232,-803 125,-803 125,-759 232,-759 232,-803"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="178.5" y="-792.6">executor</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="178.5" y="-783.6">(*InsertExec)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="178.5" y="-774.6">exec</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="178.5" y="-765.6">0 of 4960.88kB (14.90%)</text>
+</a>
+</g>
+</g>
+<!-- N11&#45;&gt;N41 -->
+<g class="edge" id="edge45"><title>N11-&gt;N41</title>
+<g id="a_edge45"><a xlink:title="github.com/pingcap/tidb/executor.insertRows -&gt; github.com/pingcap/tidb/executor.(*InsertExec).exec (4960.88kB)">
+<path fill="none" stroke="#b2672d" d="M 305.416 -909.797 C 281.103 -885.316 236.222 -840.123 206.87 -810.567"/>
+<polygon fill="#b2672d" stroke="#b2672d" points="209.295,-808.042 199.765,-803.412 204.328,-812.974 209.295,-808.042"/>
+</a>
+</g>
+<g id="a_edge45-label"><a xlink:title="github.com/pingcap/tidb/executor.insertRows -&gt; github.com/pingcap/tidb/executor.(*InsertExec).exec (4960.88kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="278.5" y="-842.8"> 4960.88kB</text>
+</a>
+</g>
+</g>
+<!-- NN12_0 -->
+<g class="node" id="NN12_0"><title>NN12_0</title>
+<g id="a_NN12_0"><a xlink:title="2560.47kB">
+<polygon fill="#f8f8f8" stroke="black" points="106.5,-799 56.5,-799 52.5,-795 52.5,-763 102.5,-763 106.5,-767 106.5,-799"/>
+<polyline fill="none" stroke="black" points="102.5,-795 52.5,-795"/>
+<polyline fill="none" stroke="black" points="102.5,-795 102.5,-763"/>
+<polyline fill="none" stroke="black" points="102.5,-795 106.5,-799"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="79.5" y="-779.1">192B</text>
+</a>
+</g>
+</g>
+<!-- N12&#45;&gt;NN12_0 -->
+<g class="edge" id="edge14"><title>N12-&gt;NN12_0</title>
+<g id="a_edge14"><a xlink:title="2560.47kB">
+<path fill="none" stroke="black" d="M 79.5 -893.734 C 79.5 -868.212 79.5 -833.407 79.5 -809.459"/>
+<polygon fill="black" stroke="black" points="83.0001,-809.292 79.5,-799.292 76.0001,-809.293 83.0001,-809.292"/>
+</a>
+</g>
+<g id="a_edge14-label"><a xlink:title="2560.47kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="111.5" y="-842.8"> 2560.47kB</text>
+</a>
+</g>
+</g>
+<!-- N25 -->
+<g class="node" id="node25"><title>N25</title>
+<g id="a_node25"><a xlink:title="github.com/aws/aws-sdk-go/aws/endpoints.init (1024.14kB)">
+<polygon fill="#edebe9" stroke="#b2a897" points="1403,-1334.5 1268,-1334.5 1268,-1275.5 1403,-1275.5 1403,-1334.5"/>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1335.5" y="-1318.5">endpoints</text>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1335.5" y="-1301.5">init</text>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1335.5" y="-1284.5">1024.14kB (3.08%)</text>
+</a>
+</g>
+</g>
+<!-- N13&#45;&gt;N25 -->
+<g class="edge" id="edge64"><title>N13-&gt;N25</title>
+<g id="a_edge64"><a xlink:title="runtime.doInit -&gt; github.com/aws/aws-sdk-go/aws/endpoints.init (1024.14kB)">
+<path fill="none" stroke="#b2a897" d="M 1109.8 -1419.94 C 1136.76 -1409.78 1170.95 -1396.13 1200.5 -1382 C 1226.97 -1369.35 1255.38 -1353.68 1279.29 -1339.86"/>
+<polygon fill="#b2a897" stroke="#b2a897" points="1281.33,-1342.72 1288.21,-1334.67 1277.81,-1336.67 1281.33,-1342.72"/>
+</a>
+</g>
+<g id="a_edge64-label"><a xlink:title="runtime.doInit -&gt; github.com/aws/aws-sdk-go/aws/endpoints.init (1024.14kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1259.5" y="-1370.8"> 1024.14kB</text>
+</a>
+</g>
+</g>
+<!-- N35 -->
+<g class="node" id="node35"><title>N35</title>
+<g id="a_node35"><a xlink:title="github.com/pingcap/tidb/infoschema.init (514kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="1518,-1330 1421,-1330 1421,-1280 1518,-1280 1518,-1330"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1469.5" y="-1315.6">infoschema</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1469.5" y="-1301.6">init</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1469.5" y="-1287.6">514kB (1.54%)</text>
+</a>
+</g>
+</g>
+<!-- N13&#45;&gt;N35 -->
+<g class="edge" id="edge71"><title>N13-&gt;N35</title>
+<g id="a_edge71"><a xlink:title="runtime.doInit -&gt; github.com/pingcap/tidb/infoschema.init (514kB)">
+<path fill="none" stroke="#b2aea4" d="M 1114.24 -1430.87 C 1184.51 -1421.02 1312.7 -1397.65 1411.5 -1349 C 1418.77 -1345.42 1426.08 -1340.9 1432.93 -1336.15"/>
+<polygon fill="#b2aea4" stroke="#b2aea4" points="1435.28,-1338.76 1441.33,-1330.06 1431.18,-1333.1 1435.28,-1338.76"/>
+</a>
+</g>
+<g id="a_edge71-label"><a xlink:title="runtime.doInit -&gt; github.com/pingcap/tidb/infoschema.init (514kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1387.5" y="-1370.8"> 514kB</text>
+</a>
+</g>
+</g>
+<!-- N38 -->
+<g class="node" id="node38"><title>N38</title>
+<g id="a_node38"><a xlink:title="github.com/pingcap/tidb/infoschema.buildTableMeta (512.17kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="1119,-1330 1006,-1330 1006,-1280 1119,-1280 1119,-1330"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1062.5" y="-1315.6">infoschema</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1062.5" y="-1301.6">buildTableMeta</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1062.5" y="-1287.6">512.17kB (1.54%)</text>
+</a>
+</g>
+</g>
+<!-- N13&#45;&gt;N38 -->
+<g class="edge" id="edge73"><title>N13-&gt;N38</title>
+<g id="a_edge73"><a xlink:title="runtime.doInit ... github.com/pingcap/tidb/infoschema.buildTableMeta (512.17kB)">
+<path fill="none" stroke="#b2aea4" stroke-dasharray="1px, 5px" d="M 1062.5 -1419.87 C 1062.5 -1399.76 1062.5 -1365.89 1062.5 -1340.31"/>
+<polygon fill="#b2aea4" stroke="#b2aea4" points="1066,-1340.26 1062.5,-1330.26 1059,-1340.26 1066,-1340.26"/>
+</a>
+</g>
+<g id="a_edge73-label"><a xlink:title="runtime.doInit ... github.com/pingcap/tidb/infoschema.buildTableMeta (512.17kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1091.5" y="-1370.8"> 512.17kB</text>
+</a>
+</g>
+</g>
+<!-- N40 -->
+<g class="node" id="node40"><title>N40</title>
+<g id="a_node40"><a xlink:title="github.com/pingcap/tipb/go-tipb.init (512.02kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="1250,-1330 1137,-1330 1137,-1280 1250,-1280 1250,-1330"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1193.5" y="-1315.6">go-tipb</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1193.5" y="-1301.6">init</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1193.5" y="-1287.6">512.02kB (1.54%)</text>
+</a>
+</g>
+</g>
+<!-- N13&#45;&gt;N40 -->
+<g class="edge" id="edge75"><title>N13-&gt;N40</title>
+<g id="a_edge75"><a xlink:title="runtime.doInit -&gt; github.com/pingcap/tipb/go-tipb.init (512.02kB)">
+<path fill="none" stroke="#b2aea4" d="M 1082.82 -1419.94 C 1095.17 -1409.34 1111.09 -1395.25 1124.5 -1382 C 1138.59 -1368.07 1153.46 -1351.91 1165.77 -1338.07"/>
+<polygon fill="#b2aea4" stroke="#b2aea4" points="1168.7,-1340.05 1172.69,-1330.23 1163.45,-1335.41 1168.7,-1340.05"/>
+</a>
+</g>
+<g id="a_edge75-label"><a xlink:title="runtime.doInit -&gt; github.com/pingcap/tipb/go-tipb.init (512.02kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1167.5" y="-1370.8"> 512.02kB</text>
+</a>
+</g>
+</g>
+<!-- NN14_0 -->
+<g class="node" id="NN14_0"><title>NN14_0</title>
+<g id="a_NN14_0"><a xlink:title="2429.92kB">
+<polygon fill="#f8f8f8" stroke="black" points="114.5,-1188 64.5,-1188 60.5,-1184 60.5,-1152 110.5,-1152 114.5,-1156 114.5,-1188"/>
+<polyline fill="none" stroke="black" points="110.5,-1184 60.5,-1184"/>
+<polyline fill="none" stroke="black" points="110.5,-1184 110.5,-1152"/>
+<polyline fill="none" stroke="black" points="110.5,-1184 114.5,-1188"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="87.5" y="-1168.1">512kB</text>
+</a>
+</g>
+</g>
+<!-- N14&#45;&gt;NN14_0 -->
+<g class="edge" id="edge15"><title>N14-&gt;NN14_0</title>
+<g id="a_edge15"><a xlink:title="2429.92kB">
+<path fill="none" stroke="black" d="M 87.5 -1260.82 C 87.5 -1240.25 87.5 -1216.26 87.5 -1198.26"/>
+<polygon fill="black" stroke="black" points="91.0001,-1198.16 87.5,-1188.16 84.0001,-1198.16 91.0001,-1198.16"/>
+</a>
+</g>
+<g id="a_edge15-label"><a xlink:title="2429.92kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="119.5" y="-1231.8"> 2429.92kB</text>
+</a>
+</g>
+</g>
+<!-- N15 -->
+<g class="node" id="node15"><title>N15</title>
+<g id="a_node15"><a xlink:title="github.com/pingcap/tidb/session.createSessionWithOpt (1808.34kB)">
+<polygon fill="#edeae6" stroke="#b29e82" points="654,-1323 551,-1323 551,-1287 654,-1287 654,-1323"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="602.5" y="-1312.1">session</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="602.5" y="-1303.1">createSessionWithOpt</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="602.5" y="-1294.1">0 of 1808.34kB (5.43%)</text>
+</a>
+</g>
+</g>
+<!-- N22 -->
+<g class="node" id="node22"><title>N22</title>
+<g id="a_node22"><a xlink:title="github.com/pingcap/parser.New (1040.08kB)">
+<polygon fill="#edebe9" stroke="#b2a896" points="586,-1199.5 451,-1199.5 451,-1140.5 586,-1140.5 586,-1199.5"/>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="518.5" y="-1183.5">parser</text>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="518.5" y="-1166.5">New</text>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="518.5" y="-1149.5">1040.08kB (3.12%)</text>
+</a>
+</g>
+</g>
+<!-- N15&#45;&gt;N22 -->
+<g class="edge" id="edge60"><title>N15-&gt;N22</title>
+<g id="a_edge60"><a xlink:title="github.com/pingcap/tidb/session.createSessionWithOpt -&gt; github.com/pingcap/parser.New (1040.08kB)">
+<path fill="none" stroke="#b2a896" d="M 591.526 -1286.94 C 583.685 -1274.72 572.903 -1257.87 563.5 -1243 C 556.415 -1231.79 548.753 -1219.57 541.794 -1208.43"/>
+<polygon fill="#b2a896" stroke="#b2a896" points="544.653,-1206.4 536.389,-1199.77 538.714,-1210.11 544.653,-1206.4"/>
+</a>
+</g>
+<g id="a_edge60-label"><a xlink:title="github.com/pingcap/tidb/session.createSessionWithOpt -&gt; github.com/pingcap/parser.New (1040.08kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="595.5" y="-1231.8"> 1040.08kB</text>
+</a>
+</g>
+</g>
+<!-- N30 -->
+<g class="node" id="node30"><title>N30</title>
+<g id="a_node30"><a xlink:title="go.uber.org/zap/zapcore.newCounters (768.26kB)">
+<polygon fill="#edecea" stroke="#b2ab9d" points="723,-1196.5 604,-1196.5 604,-1143.5 723,-1143.5 723,-1196.5"/>
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="663.5" y="-1181.3">zapcore</text>
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="663.5" y="-1166.3">newCounters</text>
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="663.5" y="-1151.3">768.26kB (2.31%)</text>
+</a>
+</g>
+</g>
+<!-- N15&#45;&gt;N30 -->
+<g class="edge" id="edge66"><title>N15-&gt;N30</title>
+<g id="a_edge66"><a xlink:title="github.com/pingcap/tidb/session.createSessionWithOpt ... go.uber.org/zap/zapcore.newCounters (768.26kB)">
+<path fill="none" stroke="#b2ab9d" stroke-dasharray="1px, 5px" d="M 610.35 -1286.88 C 619.692 -1266.51 635.531 -1231.98 647.494 -1205.9"/>
+<polygon fill="#b2ab9d" stroke="#b2ab9d" points="650.719,-1207.26 651.706,-1196.71 644.356,-1204.34 650.719,-1207.26"/>
+</a>
+</g>
+<g id="a_edge66-label"><a xlink:title="github.com/pingcap/tidb/session.createSessionWithOpt ... go.uber.org/zap/zapcore.newCounters (768.26kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="666.5" y="-1231.8"> 768.26kB</text>
+</a>
+</g>
+</g>
+<!-- N16 -->
+<g class="node" id="node16"><title>N16</title>
+<g id="a_node16"><a xlink:title="github.com/pingcap/tidb/util/arena.NewAllocator (1584.50kB)">
+<polygon fill="#edeae7" stroke="#b2a188" points="885.5,-1201 741.5,-1201 741.5,-1139 885.5,-1139 885.5,-1201"/>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="813.5" y="-1184.2">arena</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="813.5" y="-1166.2">NewAllocator</text>
+<text font-family="Times New Roman,serif" font-size="16px" text-anchor="middle" x="813.5" y="-1148.2">1584.50kB (4.76%)</text>
+</a>
+</g>
+</g>
+<!-- NN16_0 -->
+<g class="node" id="NN16_0"><title>NN16_0</title>
+<g id="a_NN16_0"><a xlink:title="1584.50kB">
+<polygon fill="#f8f8f8" stroke="black" points="840.5,-1075 790.5,-1075 786.5,-1071 786.5,-1039 836.5,-1039 840.5,-1043 840.5,-1075"/>
+<polyline fill="none" stroke="black" points="836.5,-1071 786.5,-1071"/>
+<polyline fill="none" stroke="black" points="836.5,-1071 836.5,-1039"/>
+<polyline fill="none" stroke="black" points="836.5,-1071 840.5,-1075"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="813.5" y="-1055.1">32kB</text>
+</a>
+</g>
+</g>
+<!-- N16&#45;&gt;NN16_0 -->
+<g class="edge" id="edge16"><title>N16-&gt;NN16_0</title>
+<g id="a_edge16"><a xlink:title="1584.50kB">
+<path fill="none" stroke="black" d="M 813.5 -1138.96 C 813.5 -1122.37 813.5 -1101.91 813.5 -1085.71"/>
+<polygon fill="black" stroke="black" points="817,-1085.27 813.5,-1075.27 810,-1085.27 817,-1085.27"/>
+</a>
+</g>
+<g id="a_edge16-label"><a xlink:title="1584.50kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="845.5" y="-1100.8"> 1584.50kB</text>
+</a>
+</g>
+</g>
+<!-- NN17_0 -->
+<g class="node" id="NN17_0"><title>NN17_0</title>
+<g id="a_NN17_0"><a xlink:title="1536.42kB">
+<polygon fill="#f8f8f8" stroke="black" points="349.5,-686 299.5,-686 295.5,-682 295.5,-650 345.5,-650 349.5,-654 349.5,-686"/>
+<polyline fill="none" stroke="black" points="345.5,-682 295.5,-682"/>
+<polyline fill="none" stroke="black" points="345.5,-682 345.5,-650"/>
+<polyline fill="none" stroke="black" points="345.5,-682 349.5,-686"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-666.1">288B</text>
+</a>
+</g>
+</g>
+<!-- N17&#45;&gt;NN17_0 -->
+<g class="edge" id="edge17"><title>N17-&gt;NN17_0</title>
+<g id="a_edge17"><a xlink:title="1536.42kB">
+<path fill="none" stroke="black" d="M 322.5 -740.866 C 322.5 -726.09 322.5 -709.615 322.5 -696.171"/>
+<polygon fill="black" stroke="black" points="326,-696.129 322.5,-686.129 319,-696.129 326,-696.129"/>
+</a>
+</g>
+<g id="a_edge17-label"><a xlink:title="1536.42kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="354.5" y="-711.8"> 1536.42kB</text>
+</a>
+</g>
+</g>
+<!-- N18 -->
+<g class="node" id="node18"><title>N18</title>
+<g id="a_node18"><a xlink:title="github.com/pingcap/tidb/statistics.PseudoTable (2048.27kB)">
+<polygon fill="#ede9e5" stroke="#b29a7b" points="1720,-1476 1569,-1476 1569,-1400 1720,-1400 1720,-1476"/>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1644.5" y="-1460">statistics</text>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1644.5" y="-1443">PseudoTable</text>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1644.5" y="-1426">1024.17kB (3.08%)</text>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1644.5" y="-1409">of 2048.27kB (6.15%)</text>
+</a>
+</g>
+</g>
+<!-- NN18_0 -->
+<g class="node" id="NN18_0"><title>NN18_0</title>
+<g id="a_NN18_0"><a xlink:title="512.12kB">
+<polygon fill="#f8f8f8" stroke="black" points="1590.5,-1323 1540.5,-1323 1536.5,-1319 1536.5,-1287 1586.5,-1287 1590.5,-1291 1590.5,-1323"/>
+<polyline fill="none" stroke="black" points="1586.5,-1319 1536.5,-1319"/>
+<polyline fill="none" stroke="black" points="1586.5,-1319 1586.5,-1287"/>
+<polyline fill="none" stroke="black" points="1586.5,-1319 1590.5,-1323"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1563.5" y="-1303.1">256B</text>
+</a>
+</g>
+</g>
+<!-- N18&#45;&gt;NN18_0 -->
+<g class="edge" id="edge18"><title>N18-&gt;NN18_0</title>
+<g id="a_edge18"><a xlink:title="512.12kB">
+<path fill="none" stroke="black" d="M 1596.22 -1399.75 C 1591.05 -1394.23 1586.3 -1388.27 1582.5 -1382 C 1573.59 -1367.31 1568.85 -1348.61 1566.33 -1333.43"/>
+<polygon fill="black" stroke="black" points="1569.73,-1332.52 1564.86,-1323.12 1562.8,-1333.51 1569.73,-1332.52"/>
+</a>
+</g>
+<g id="a_edge18-label"><a xlink:title="512.12kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1611.5" y="-1370.8"> 512.12kB</text>
+</a>
+</g>
+</g>
+<!-- NN18_1 -->
+<g class="node" id="NN18_1"><title>NN18_1</title>
+<g id="a_NN18_1"><a xlink:title="512.05kB">
+<polygon fill="#f8f8f8" stroke="black" points="1671.5,-1323 1621.5,-1323 1617.5,-1319 1617.5,-1287 1667.5,-1287 1671.5,-1291 1671.5,-1323"/>
+<polyline fill="none" stroke="black" points="1667.5,-1319 1617.5,-1319"/>
+<polyline fill="none" stroke="black" points="1667.5,-1319 1667.5,-1287"/>
+<polyline fill="none" stroke="black" points="1667.5,-1319 1671.5,-1323"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1644.5" y="-1303.1">96B</text>
+</a>
+</g>
+</g>
+<!-- N18&#45;&gt;NN18_1 -->
+<g class="edge" id="edge19"><title>N18-&gt;NN18_1</title>
+<g id="a_edge19"><a xlink:title="512.05kB">
+<path fill="none" stroke="black" d="M 1644.5 -1399.81 C 1644.5 -1378.72 1644.5 -1352.78 1644.5 -1333.52"/>
+<polygon fill="black" stroke="black" points="1648,-1333.32 1644.5,-1323.32 1641,-1333.32 1648,-1333.32"/>
+</a>
+</g>
+<g id="a_edge19-label"><a xlink:title="512.05kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1673.5" y="-1370.8"> 512.05kB</text>
+</a>
+</g>
+</g>
+<!-- N31 -->
+<g class="node" id="node31"><title>N31</title>
+<g id="a_node31"><a xlink:title="github.com/pingcap/tidb/util/chunk.New (1024.09kB)">
+<polygon fill="#edebe9" stroke="#b2a897" points="1784.5,-1202 1650.5,-1202 1650.5,-1138 1784.5,-1138 1784.5,-1202"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1717.5" y="-1187.6">chunk</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1717.5" y="-1173.6">New</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1717.5" y="-1159.6">512.04kB (1.54%)</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1717.5" y="-1145.6">of 1024.09kB (3.08%)</text>
+</a>
+</g>
+</g>
+<!-- N18&#45;&gt;N31 -->
+<g class="edge" id="edge65"><title>N18-&gt;N31</title>
+<g id="a_edge65"><a xlink:title="github.com/pingcap/tidb/statistics.PseudoTable ... github.com/pingcap/tidb/util/chunk.New (1024.09kB)">
+<path fill="none" stroke="#b2a897" stroke-dasharray="1px, 5px" d="M 1691.79 -1399.76 C 1696.42 -1394.28 1700.5 -1388.32 1703.5 -1382 C 1729.31 -1327.66 1727.81 -1256.43 1723.39 -1212.2"/>
+<polygon fill="#b2a897" stroke="#b2a897" points="1726.86,-1211.67 1722.29,-1202.11 1719.9,-1212.43 1726.86,-1211.67"/>
+</a>
+</g>
+<g id="a_edge65-label"><a xlink:title="github.com/pingcap/tidb/statistics.PseudoTable ... github.com/pingcap/tidb/util/chunk.New (1024.09kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1758.5" y="-1301.3"> 1024.09kB</text>
+</a>
+</g>
+</g>
+<!-- N19 -->
+<g class="node" id="node19"><title>N19</title>
+<g id="a_node19"><a xlink:title="github.com/pingcap/tidb/server.(*Server).startHTTPServer (1545.23kB)">
+<polygon fill="#edeae7" stroke="#b2a289" points="1919,-1581 1816,-1581 1816,-1537 1919,-1537 1919,-1581"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1867.5" y="-1570.6">server</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1867.5" y="-1561.6">(*Server)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1867.5" y="-1552.6">startHTTPServer</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1867.5" y="-1543.6">0 of 1545.23kB (4.64%)</text>
+</a>
+</g>
+</g>
+<!-- N24 -->
+<g class="node" id="node24"><title>N24</title>
+<g id="a_node24"><a xlink:title="regexp.onePassCopy (1025.19kB)">
+<polygon fill="#edebe9" stroke="#b2a897" points="1935,-1467.5 1800,-1467.5 1800,-1408.5 1935,-1408.5 1935,-1467.5"/>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1867.5" y="-1451.5">regexp</text>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1867.5" y="-1434.5">onePassCopy</text>
+<text font-family="Times New Roman,serif" font-size="15px" text-anchor="middle" x="1867.5" y="-1417.5">1025.19kB (3.08%)</text>
+</a>
+</g>
+</g>
+<!-- N19&#45;&gt;N24 -->
+<g class="edge" id="edge63"><title>N19-&gt;N24</title>
+<g id="a_edge63"><a xlink:title="github.com/pingcap/tidb/server.(*Server).startHTTPServer ... regexp.onePassCopy (1025.19kB)">
+<path fill="none" stroke="#b2a897" stroke-dasharray="1px, 5px" d="M 1867.5 -1537 C 1867.5 -1520.71 1867.5 -1497.68 1867.5 -1478.03"/>
+<polygon fill="#b2a897" stroke="#b2a897" points="1871,-1477.83 1867.5,-1467.83 1864,-1477.83 1871,-1477.83"/>
+</a>
+</g>
+<g id="a_edge63-label"><a xlink:title="github.com/pingcap/tidb/server.(*Server).startHTTPServer ... regexp.onePassCopy (1025.19kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1899.5" y="-1497.8"> 1025.19kB</text>
+</a>
+</g>
+</g>
+<!-- N33 -->
+<g class="node" id="node33"><title>N33</title>
+<g id="a_node33"><a xlink:title="github.com/soheilhy/cmux.(*cMux).MatchWithWriters (520.04kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="2067.5,-1470 1953.5,-1470 1953.5,-1406 2067.5,-1406 2067.5,-1470"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2010.5" y="-1455.6">cmux</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2010.5" y="-1441.6">(*cMux)</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2010.5" y="-1427.6">MatchWithWriters</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2010.5" y="-1413.6">520.04kB (1.56%)</text>
+</a>
+</g>
+</g>
+<!-- N19&#45;&gt;N33 -->
+<g class="edge" id="edge69"><title>N19-&gt;N33</title>
+<g id="a_edge69"><a xlink:title="github.com/pingcap/tidb/server.(*Server).startHTTPServer ... github.com/soheilhy/cmux.(*cMux).MatchWithWriters (520.04kB)">
+<path fill="none" stroke="#b2aea4" stroke-dasharray="1px, 5px" d="M 1898.58 -1536.85 C 1910.39 -1528.49 1923.81 -1518.61 1935.5 -1509 C 1947.47 -1499.17 1959.95 -1487.95 1971.23 -1477.4"/>
+<polygon fill="#b2aea4" stroke="#b2aea4" points="1973.95,-1479.65 1978.82,-1470.24 1969.14,-1474.56 1973.95,-1479.65"/>
+</a>
+</g>
+<g id="a_edge69-label"><a xlink:title="github.com/pingcap/tidb/server.(*Server).startHTTPServer ... github.com/soheilhy/cmux.(*cMux).MatchWithWriters (520.04kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1982.5" y="-1497.8"> 520.04kB</text>
+</a>
+</g>
+</g>
+<!-- N20 -->
+<g class="node" id="node20"><title>N20</title>
+<g id="a_node20"><a xlink:title="compress/flate.NewWriter (902.59kB)">
+<polygon fill="#edece9" stroke="#b2aa9a" points="2172,-1585.5 2053,-1585.5 2053,-1532.5 2172,-1532.5 2172,-1585.5"/>
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="2112.5" y="-1570.3">flate</text>
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="2112.5" y="-1555.3">NewWriter</text>
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="2112.5" y="-1540.3">902.59kB (2.71%)</text>
+</a>
+</g>
+</g>
+<!-- NN20_0 -->
+<g class="node" id="NN20_0"><title>NN20_0</title>
+<g id="a_NN20_0"><a xlink:title="902.59kB">
+<polygon fill="#f8f8f8" stroke="black" points="2139.5,-1456 2089.5,-1456 2085.5,-1452 2085.5,-1420 2135.5,-1420 2139.5,-1424 2139.5,-1456"/>
+<polyline fill="none" stroke="black" points="2135.5,-1452 2085.5,-1452"/>
+<polyline fill="none" stroke="black" points="2135.5,-1452 2135.5,-1420"/>
+<polyline fill="none" stroke="black" points="2135.5,-1452 2139.5,-1456"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="2112.5" y="-1436.1">648kB</text>
+</a>
+</g>
+</g>
+<!-- N20&#45;&gt;NN20_0 -->
+<g class="edge" id="edge20"><title>N20-&gt;NN20_0</title>
+<g id="a_edge20"><a xlink:title="902.59kB">
+<path fill="none" stroke="black" d="M 2112.5 -1532.47 C 2112.5 -1513 2112.5 -1486.22 2112.5 -1466.31"/>
+<polygon fill="black" stroke="black" points="2116,-1466.05 2112.5,-1456.05 2109,-1466.05 2116,-1466.05"/>
+</a>
+</g>
+<g id="a_edge20-label"><a xlink:title="902.59kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="2141.5" y="-1497.8"> 902.59kB</text>
+</a>
+</g>
+</g>
+<!-- N21&#45;&gt;N15 -->
+<g class="edge" id="edge67"><title>N21-&gt;N15</title>
+<g id="a_edge67"><a xlink:title="main.main ... github.com/pingcap/tidb/session.createSessionWithOpt (768.26kB)">
+<path fill="none" stroke="#b2ab9d" stroke-dasharray="1px, 5px" d="M 892.835 -1419.87 C 831.741 -1395.91 720.888 -1352.43 655.255 -1326.69"/>
+<polygon fill="#b2ab9d" stroke="#b2ab9d" points="656.498,-1323.42 645.91,-1323.03 653.942,-1329.94 656.498,-1323.42"/>
+</a>
+</g>
+<g id="a_edge67-label"><a xlink:title="main.main ... github.com/pingcap/tidb/session.createSessionWithOpt (768.26kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="818.5" y="-1370.8"> 768.26kB</text>
+</a>
+</g>
+</g>
+<!-- N27 -->
+<g class="node" id="node27"><title>N27</title>
+<g id="a_node27"><a xlink:title="github.com/pingcap/tidb/server.(*Server).newConn (2104.54kB)">
+<polygon fill="#ede9e5" stroke="#b2997a" points="988,-1327 885,-1327 885,-1283 988,-1283 988,-1327"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1316.6">server</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1307.6">(*Server)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1298.6">newConn</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="936.5" y="-1289.6">0 of 2104.54kB (6.32%)</text>
+</a>
+</g>
+</g>
+<!-- N21&#45;&gt;N27 -->
+<g class="edge" id="edge54"><title>N21-&gt;N27</title>
+<g id="a_edge54"><a xlink:title="main.main ... github.com/pingcap/tidb/server.(*Server).newConn (2104.54kB)">
+<path fill="none" stroke="#b2997a" stroke-dasharray="1px, 5px" d="M 936.5 -1419.87 C 936.5 -1398.91 936.5 -1362.99 936.5 -1337.1"/>
+<polygon fill="#b2997a" stroke="#b2997a" points="940,-1337.03 936.5,-1327.03 933,-1337.03 940,-1337.03"/>
+</a>
+</g>
+<g id="a_edge54-label"><a xlink:title="main.main ... github.com/pingcap/tidb/server.(*Server).newConn (2104.54kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="968.5" y="-1370.8"> 2104.54kB</text>
+</a>
+</g>
+</g>
+<!-- NN22_0 -->
+<g class="node" id="NN22_0"><title>NN22_0</title>
+<g id="a_NN22_0"><a xlink:title="1040.08kB">
+<polygon fill="#f8f8f8" stroke="black" points="545.5,-1075 495.5,-1075 491.5,-1071 491.5,-1039 541.5,-1039 545.5,-1043 545.5,-1075"/>
+<polyline fill="none" stroke="black" points="541.5,-1071 491.5,-1071"/>
+<polyline fill="none" stroke="black" points="541.5,-1071 541.5,-1039"/>
+<polyline fill="none" stroke="black" points="541.5,-1071 545.5,-1075"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="518.5" y="-1055.1">16kB</text>
+</a>
+</g>
+</g>
+<!-- N22&#45;&gt;NN22_0 -->
+<g class="edge" id="edge21"><title>N22-&gt;NN22_0</title>
+<g id="a_edge21"><a xlink:title="1040.08kB">
+<path fill="none" stroke="black" d="M 518.5 -1140.41 C 518.5 -1123.45 518.5 -1102.05 518.5 -1085.31"/>
+<polygon fill="black" stroke="black" points="522,-1085.08 518.5,-1075.08 515,-1085.08 522,-1085.08"/>
+</a>
+</g>
+<g id="a_edge21-label"><a xlink:title="1040.08kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="550.5" y="-1100.8"> 1040.08kB</text>
+</a>
+</g>
+</g>
+<!-- N23&#45;&gt;N10 -->
+<g class="edge" id="edge61"><title>N23-&gt;N10</title>
+<g id="a_edge61"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).openSessionAndDoAuth ... github.com/pingcap/tidb/server.(*TiDBContext).ExecuteStmt (1027.38kB)">
+<path fill="none" stroke="#b2a896" stroke-dasharray="1px, 5px" d="M 496.048 -1415.77 C 490.752 -1398.01 483.222 -1371.96 477.5 -1349 C 464.199 -1295.63 481.011 -1274.42 451.5 -1228 C 444.228 -1216.56 433.805 -1206.56 423.032 -1198.25"/>
+<polygon fill="#b2a896" stroke="#b2a896" points="424.917,-1195.3 414.772,-1192.24 420.797,-1200.96 424.917,-1195.3"/>
+</a>
+</g>
+<g id="a_edge61-label"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).openSessionAndDoAuth ... github.com/pingcap/tidb/server.(*TiDBContext).ExecuteStmt (1027.38kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="509.5" y="-1301.3"> 1027.38kB</text>
+</a>
+</g>
+</g>
+<!-- N23&#45;&gt;N15 -->
+<g class="edge" id="edge59"><title>N23-&gt;N15</title>
+<g id="a_edge59"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).openSessionAndDoAuth ... github.com/pingcap/tidb/session.createSessionWithOpt (1040.08kB)">
+<path fill="none" stroke="#b2a896" stroke-dasharray="1px, 5px" d="M 518.567 -1415.95 C 536.149 -1392.92 564.33 -1356 583.123 -1331.38"/>
+<polygon fill="#b2a896" stroke="#b2a896" points="586.061,-1333.3 589.346,-1323.23 580.497,-1329.06 586.061,-1333.3"/>
+</a>
+</g>
+<g id="a_edge59-label"><a xlink:title="github.com/pingcap/tidb/server.(*clientConn).openSessionAndDoAuth ... github.com/pingcap/tidb/session.createSessionWithOpt (1040.08kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="587.5" y="-1370.8"> 1040.08kB</text>
+</a>
+</g>
+</g>
+<!-- NN24_0 -->
+<g class="node" id="NN24_0"><title>NN24_0</title>
+<g id="a_NN24_0"><a xlink:title="513kB">
+<polygon fill="#f8f8f8" stroke="black" points="1853.5,-1323 1803.5,-1323 1799.5,-1319 1799.5,-1287 1849.5,-1287 1853.5,-1291 1853.5,-1323"/>
+<polyline fill="none" stroke="black" points="1849.5,-1319 1799.5,-1319"/>
+<polyline fill="none" stroke="black" points="1849.5,-1319 1849.5,-1287"/>
+<polyline fill="none" stroke="black" points="1849.5,-1319 1853.5,-1323"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1826.5" y="-1303.1">2kB</text>
+</a>
+</g>
+</g>
+<!-- N24&#45;&gt;NN24_0 -->
+<g class="edge" id="edge22"><title>N24-&gt;NN24_0</title>
+<g id="a_edge22"><a xlink:title="513kB">
+<path fill="none" stroke="black" d="M 1849.45 -1408.48 C 1844.91 -1400.21 1840.49 -1390.98 1837.5 -1382 C 1832.28 -1366.33 1829.53 -1348.02 1828.09 -1333.3"/>
+<polygon fill="black" stroke="black" points="1831.58,-1332.98 1827.26,-1323.3 1824.6,-1333.56 1831.58,-1332.98"/>
+</a>
+</g>
+<g id="a_edge22-label"><a xlink:title="513kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1857.5" y="-1370.8"> 513kB</text>
+</a>
+</g>
+</g>
+<!-- NN24_1 -->
+<g class="node" id="NN24_1"><title>NN24_1</title>
+<g id="a_NN24_1"><a xlink:title="512.19kB">
+<polygon fill="#f8f8f8" stroke="black" points="1925.5,-1323 1875.5,-1323 1871.5,-1319 1871.5,-1287 1921.5,-1287 1925.5,-1291 1925.5,-1323"/>
+<polyline fill="none" stroke="black" points="1921.5,-1319 1871.5,-1319"/>
+<polyline fill="none" stroke="black" points="1921.5,-1319 1921.5,-1287"/>
+<polyline fill="none" stroke="black" points="1921.5,-1319 1925.5,-1323"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1898.5" y="-1303.1">384B</text>
+</a>
+</g>
+</g>
+<!-- N24&#45;&gt;NN24_1 -->
+<g class="edge" id="edge23"><title>N24-&gt;NN24_1</title>
+<g id="a_edge23"><a xlink:title="512.19kB">
+<path fill="none" stroke="black" d="M 1874.3 -1408.25 C 1879.6 -1385.86 1886.91 -1354.99 1892.1 -1333.04"/>
+<polygon fill="black" stroke="black" points="1895.57,-1333.59 1894.46,-1323.06 1888.75,-1331.98 1895.57,-1333.59"/>
+</a>
+</g>
+<g id="a_edge23-label"><a xlink:title="512.19kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1913.5" y="-1370.8"> 512.19kB</text>
+</a>
+</g>
+</g>
+<!-- NN25_0 -->
+<g class="node" id="NN25_0"><title>NN25_0</title>
+<g id="a_NN25_0"><a xlink:title="1024.14kB">
+<polygon fill="#f8f8f8" stroke="black" points="1362.5,-1188 1312.5,-1188 1308.5,-1184 1308.5,-1152 1358.5,-1152 1362.5,-1156 1362.5,-1188"/>
+<polyline fill="none" stroke="black" points="1358.5,-1184 1308.5,-1184"/>
+<polyline fill="none" stroke="black" points="1358.5,-1184 1358.5,-1152"/>
+<polyline fill="none" stroke="black" points="1358.5,-1184 1362.5,-1188"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1335.5" y="-1168.1">144B</text>
+</a>
+</g>
+</g>
+<!-- N25&#45;&gt;NN25_0 -->
+<g class="edge" id="edge24"><title>N25-&gt;NN25_0</title>
+<g id="a_edge24"><a xlink:title="1024.14kB">
+<path fill="none" stroke="black" d="M 1335.5 -1275.47 C 1335.5 -1252.64 1335.5 -1220.84 1335.5 -1198.33"/>
+<polygon fill="black" stroke="black" points="1339,-1198.11 1335.5,-1188.11 1332,-1198.11 1339,-1198.11"/>
+</a>
+</g>
+<g id="a_edge24-label"><a xlink:title="1024.14kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1367.5" y="-1231.8"> 1024.14kB</text>
+</a>
+</g>
+</g>
+<!-- N26 -->
+<g class="node" id="node26"><title>N26</title>
+<g id="a_node26"><a xlink:title="github.com/pingcap/tidb/domain.(*Domain).autoAnalyzeWorker (2048.27kB)">
+<polygon fill="#ede9e5" stroke="#b29a7b" points="1696,-1581 1593,-1581 1593,-1537 1696,-1537 1696,-1581"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1644.5" y="-1570.6">domain</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1644.5" y="-1561.6">(*Domain)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1644.5" y="-1552.6">autoAnalyzeWorker</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1644.5" y="-1543.6">0 of 2048.27kB (6.15%)</text>
+</a>
+</g>
+</g>
+<!-- N26&#45;&gt;N18 -->
+<g class="edge" id="edge56"><title>N26-&gt;N18</title>
+<g id="a_edge56"><a xlink:title="github.com/pingcap/tidb/domain.(*Domain).autoAnalyzeWorker ... github.com/pingcap/tidb/statistics.PseudoTable (2048.27kB)">
+<path fill="none" stroke="#b29a7b" stroke-dasharray="1px, 5px" d="M 1644.5 -1537 C 1644.5 -1522.94 1644.5 -1503.86 1644.5 -1486.27"/>
+<polygon fill="#b29a7b" stroke="#b29a7b" points="1648,-1486.14 1644.5,-1476.14 1641,-1486.14 1648,-1486.14"/>
+</a>
+</g>
+<g id="a_edge56-label"><a xlink:title="github.com/pingcap/tidb/domain.(*Domain).autoAnalyzeWorker ... github.com/pingcap/tidb/statistics.PseudoTable (2048.27kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1676.5" y="-1497.8"> 2048.27kB</text>
+</a>
+</g>
+</g>
+<!-- N27&#45;&gt;N16 -->
+<g class="edge" id="edge57"><title>N27-&gt;N16</title>
+<g id="a_edge57"><a xlink:title="github.com/pingcap/tidb/server.(*Server).newConn ... github.com/pingcap/tidb/util/arena.NewAllocator (1584.50kB)">
+<path fill="none" stroke="#b2a188" stroke-dasharray="1px, 5px" d="M 917.01 -1282.93 C 898.673 -1263.1 870.791 -1232.95 848.583 -1208.93"/>
+<polygon fill="#b2a188" stroke="#b2a188" points="850.95,-1206.34 841.591,-1201.37 845.811,-1211.09 850.95,-1206.34"/>
+</a>
+</g>
+<g id="a_edge57-label"><a xlink:title="github.com/pingcap/tidb/server.(*Server).newConn ... github.com/pingcap/tidb/util/arena.NewAllocator (1584.50kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="911.5" y="-1231.8"> 1584.50kB</text>
+</a>
+</g>
+</g>
+<!-- N32 -->
+<g class="node" id="node32"><title>N32</title>
+<g id="a_node32"><a xlink:title="bufio.NewWriterSize (520.04kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="1017,-1195 904,-1195 904,-1145 1017,-1145 1017,-1195"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="960.5" y="-1180.6">bufio</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="960.5" y="-1166.6">NewWriterSize</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="960.5" y="-1152.6">520.04kB (1.56%)</text>
+</a>
+</g>
+</g>
+<!-- N27&#45;&gt;N32 -->
+<g class="edge" id="edge68"><title>N27-&gt;N32</title>
+<g id="a_edge68"><a xlink:title="github.com/pingcap/tidb/server.(*Server).newConn ... bufio.NewWriterSize (520.04kB)">
+<path fill="none" stroke="#b2aea4" stroke-dasharray="1px, 5px" d="M 940.303 -1282.93 C 944.073 -1262.03 949.911 -1229.68 954.343 -1205.12"/>
+<polygon fill="#b2aea4" stroke="#b2aea4" points="957.815,-1205.59 956.146,-1195.13 950.926,-1204.35 957.815,-1205.59"/>
+</a>
+</g>
+<g id="a_edge68-label"><a xlink:title="github.com/pingcap/tidb/server.(*Server).newConn ... bufio.NewWriterSize (520.04kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="979.5" y="-1231.8"> 520.04kB</text>
+</a>
+</g>
+</g>
+<!-- N28 -->
+<g class="node" id="node28"><title>N28</title>
+<g id="a_node28"><a xlink:title="golang.org/x/net/http2.(*Framer).WriteDataPadded (521.05kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="2303,-1591 2190,-1591 2190,-1527 2303,-1527 2303,-1591"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2246.5" y="-1576.6">http2</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2246.5" y="-1562.6">(*Framer)</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2246.5" y="-1548.6">WriteDataPadded</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2246.5" y="-1534.6">521.05kB (1.57%)</text>
+</a>
+</g>
+</g>
+<!-- NN28_0 -->
+<g class="node" id="NN28_0"><title>NN28_0</title>
+<g id="a_NN28_0"><a xlink:title="521.05kB">
+<polygon fill="#f8f8f8" stroke="black" points="2273.5,-1456 2223.5,-1456 2219.5,-1452 2219.5,-1420 2269.5,-1420 2273.5,-1424 2273.5,-1456"/>
+<polyline fill="none" stroke="black" points="2269.5,-1452 2219.5,-1452"/>
+<polyline fill="none" stroke="black" points="2269.5,-1452 2269.5,-1420"/>
+<polyline fill="none" stroke="black" points="2269.5,-1452 2273.5,-1456"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="2246.5" y="-1436.1">18kB</text>
+</a>
+</g>
+</g>
+<!-- N28&#45;&gt;NN28_0 -->
+<g class="edge" id="edge25"><title>N28-&gt;NN28_0</title>
+<g id="a_edge25"><a xlink:title="521.05kB">
+<path fill="none" stroke="black" d="M 2246.5 -1526.73 C 2246.5 -1507.94 2246.5 -1484.26 2246.5 -1466.23"/>
+<polygon fill="black" stroke="black" points="2250,-1466.1 2246.5,-1456.1 2243,-1466.1 2250,-1466.1"/>
+</a>
+</g>
+<g id="a_edge25-label"><a xlink:title="521.05kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="2275.5" y="-1497.8"> 521.05kB</text>
+</a>
+</g>
+</g>
+<!-- N29 -->
+<g class="node" id="node29"><title>N29</title>
+<g id="a_node29"><a xlink:title="github.com/pingcap/tidb/infoschema.NewBuilder (518.02kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="2434,-1584 2321,-1584 2321,-1534 2434,-1534 2434,-1584"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2377.5" y="-1569.6">infoschema</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2377.5" y="-1555.6">NewBuilder</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="2377.5" y="-1541.6">518.02kB (1.56%)</text>
+</a>
+</g>
+</g>
+<!-- NN29_0 -->
+<g class="node" id="NN29_0"><title>NN29_0</title>
+<g id="a_NN29_0"><a xlink:title="518.02kB">
+<polygon fill="#f8f8f8" stroke="black" points="2404.5,-1456 2354.5,-1456 2350.5,-1452 2350.5,-1420 2400.5,-1420 2404.5,-1424 2404.5,-1456"/>
+<polyline fill="none" stroke="black" points="2400.5,-1452 2350.5,-1452"/>
+<polyline fill="none" stroke="black" points="2400.5,-1452 2400.5,-1420"/>
+<polyline fill="none" stroke="black" points="2400.5,-1452 2404.5,-1456"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="2377.5" y="-1436.1">12kB</text>
+</a>
+</g>
+</g>
+<!-- N29&#45;&gt;NN29_0 -->
+<g class="edge" id="edge26"><title>N29-&gt;NN29_0</title>
+<g id="a_edge26"><a xlink:title="518.02kB">
+<path fill="none" stroke="black" d="M 2377.5 -1533.92 C 2377.5 -1514.35 2377.5 -1486.73 2377.5 -1466.33"/>
+<polygon fill="black" stroke="black" points="2381,-1466.12 2377.5,-1456.12 2374,-1466.12 2381,-1466.12"/>
+</a>
+</g>
+<g id="a_edge26-label"><a xlink:title="518.02kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="2406.5" y="-1497.8"> 518.02kB</text>
+</a>
+</g>
+</g>
+<!-- NN30_0 -->
+<g class="node" id="NN30_0"><title>NN30_0</title>
+<g id="a_NN30_0"><a xlink:title="768.26kB">
+<polygon fill="#f8f8f8" stroke="black" points="690.5,-1075 640.5,-1075 636.5,-1071 636.5,-1039 686.5,-1039 690.5,-1043 690.5,-1075"/>
+<polyline fill="none" stroke="black" points="686.5,-1071 636.5,-1071"/>
+<polyline fill="none" stroke="black" points="686.5,-1071 686.5,-1039"/>
+<polyline fill="none" stroke="black" points="686.5,-1071 690.5,-1075"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="663.5" y="-1055.1">448kB</text>
+</a>
+</g>
+</g>
+<!-- N30&#45;&gt;NN30_0 -->
+<g class="edge" id="edge27"><title>N30-&gt;NN30_0</title>
+<g id="a_edge27"><a xlink:title="768.26kB">
+<path fill="none" stroke="black" d="M 663.5 -1143.26 C 663.5 -1125.97 663.5 -1103.21 663.5 -1085.55"/>
+<polygon fill="black" stroke="black" points="667,-1085.31 663.5,-1075.31 660,-1085.31 667,-1085.31"/>
+</a>
+</g>
+<g id="a_edge27-label"><a xlink:title="768.26kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="692.5" y="-1100.8"> 768.26kB</text>
+</a>
+</g>
+</g>
+<!-- NN31_0 -->
+<g class="node" id="NN31_0"><title>NN31_0</title>
+<g id="a_NN31_0"><a xlink:title="512.04kB">
+<polygon fill="#f8f8f8" stroke="black" points="1744.5,-1075 1694.5,-1075 1690.5,-1071 1690.5,-1039 1740.5,-1039 1744.5,-1043 1744.5,-1075"/>
+<polyline fill="none" stroke="black" points="1740.5,-1071 1690.5,-1071"/>
+<polyline fill="none" stroke="black" points="1740.5,-1071 1740.5,-1039"/>
+<polyline fill="none" stroke="black" points="1740.5,-1071 1744.5,-1075"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1717.5" y="-1055.1">80B</text>
+</a>
+</g>
+</g>
+<!-- N31&#45;&gt;NN31_0 -->
+<g class="edge" id="edge28"><title>N31-&gt;NN31_0</title>
+<g id="a_edge28"><a xlink:title="512.04kB">
+<path fill="none" stroke="black" d="M 1717.5 -1137.78 C 1717.5 -1121.32 1717.5 -1101.31 1717.5 -1085.44"/>
+<polygon fill="black" stroke="black" points="1721,-1085.22 1717.5,-1075.22 1714,-1085.22 1721,-1085.22"/>
+</a>
+</g>
+<g id="a_edge28-label"><a xlink:title="512.04kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1746.5" y="-1100.8"> 512.04kB</text>
+</a>
+</g>
+</g>
+<!-- N39 -->
+<g class="node" id="node39"><title>N39</title>
+<g id="a_node39"><a xlink:title="github.com/pingcap/tidb/util/chunk.newFixedLenColumn (512.05kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="1853,-953 1728,-953 1728,-903 1853,-903 1853,-953"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1790.5" y="-938.6">chunk</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1790.5" y="-924.6">newFixedLenColumn</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="1790.5" y="-910.6">512.05kB (1.54%)</text>
+</a>
+</g>
+</g>
+<!-- N31&#45;&gt;N39 -->
+<g class="edge" id="edge74"><title>N31-&gt;N39</title>
+<g id="a_edge74"><a xlink:title="github.com/pingcap/tidb/util/chunk.New ... github.com/pingcap/tidb/util/chunk.newFixedLenColumn (512.05kB)">
+<path fill="none" stroke="#b2aea4" stroke-dasharray="1px, 5px" d="M 1757.76 -1138 C 1765.19 -1130.32 1772.02 -1121.54 1776.5 -1112 C 1798.99 -1064.16 1798.21 -1001.47 1794.88 -963.27"/>
+<polygon fill="#b2aea4" stroke="#b2aea4" points="1798.35,-962.787 1793.88,-953.177 1791.38,-963.471 1798.35,-962.787"/>
+</a>
+</g>
+<g id="a_edge74-label"><a xlink:title="github.com/pingcap/tidb/util/chunk.New ... github.com/pingcap/tidb/util/chunk.newFixedLenColumn (512.05kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1824.5" y="-1053.3"> 512.05kB</text>
+</a>
+</g>
+</g>
+<!-- NN32_0 -->
+<g class="node" id="NN32_0"><title>NN32_0</title>
+<g id="a_NN32_0"><a xlink:title="520.04kB">
+<polygon fill="#f8f8f8" stroke="black" points="987.5,-1075 937.5,-1075 933.5,-1071 933.5,-1039 983.5,-1039 987.5,-1043 987.5,-1075"/>
+<polyline fill="none" stroke="black" points="983.5,-1071 933.5,-1071"/>
+<polyline fill="none" stroke="black" points="983.5,-1071 983.5,-1039"/>
+<polyline fill="none" stroke="black" points="983.5,-1071 987.5,-1075"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="960.5" y="-1055.1">16kB</text>
+</a>
+</g>
+</g>
+<!-- N32&#45;&gt;NN32_0 -->
+<g class="edge" id="edge29"><title>N32-&gt;NN32_0</title>
+<g id="a_edge29"><a xlink:title="520.04kB">
+<path fill="none" stroke="black" d="M 960.5 -1144.91 C 960.5 -1127.33 960.5 -1103.46 960.5 -1085.19"/>
+<polygon fill="black" stroke="black" points="964,-1085.16 960.5,-1075.16 957,-1085.16 964,-1085.16"/>
+</a>
+</g>
+<g id="a_edge29-label"><a xlink:title="520.04kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="989.5" y="-1100.8"> 520.04kB</text>
+</a>
+</g>
+</g>
+<!-- NN33_0 -->
+<g class="node" id="NN33_0"><title>NN33_0</title>
+<g id="a_NN33_0"><a xlink:title="520.04kB">
+<polygon fill="#f8f8f8" stroke="black" points="2037.5,-1323 1987.5,-1323 1983.5,-1319 1983.5,-1287 2033.5,-1287 2037.5,-1291 2037.5,-1323"/>
+<polyline fill="none" stroke="black" points="2033.5,-1319 1983.5,-1319"/>
+<polyline fill="none" stroke="black" points="2033.5,-1319 2033.5,-1287"/>
+<polyline fill="none" stroke="black" points="2033.5,-1319 2037.5,-1323"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="2010.5" y="-1303.1">16kB</text>
+</a>
+</g>
+</g>
+<!-- N33&#45;&gt;NN33_0 -->
+<g class="edge" id="edge30"><title>N33-&gt;NN33_0</title>
+<g id="a_edge30"><a xlink:title="520.04kB">
+<path fill="none" stroke="black" d="M 2010.5 -1405.95 C 2010.5 -1383.92 2010.5 -1354.61 2010.5 -1333.43"/>
+<polygon fill="black" stroke="black" points="2014,-1333.18 2010.5,-1323.18 2007,-1333.18 2014,-1333.18"/>
+</a>
+</g>
+<g id="a_edge30-label"><a xlink:title="520.04kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="2039.5" y="-1370.8"> 520.04kB</text>
+</a>
+</g>
+</g>
+<!-- N34 -->
+<g class="node" id="node34"><title>N34</title>
+<g id="a_node34"><a xlink:title="github.com/pingcap/tidb/sessionctx/variable.(*SessionVars).SetSystemVar (514.38kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="641,-813 528,-813 528,-749 641,-749 641,-813"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="584.5" y="-798.6">variable</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="584.5" y="-784.6">(*SessionVars)</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="584.5" y="-770.6">SetSystemVar</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="584.5" y="-756.6">514.38kB (1.55%)</text>
+</a>
+</g>
+</g>
+<!-- NN34_0 -->
+<g class="node" id="NN34_0"><title>NN34_0</title>
+<g id="a_NN34_0"><a xlink:title="514.38kB">
+<polygon fill="#f8f8f8" stroke="black" points="611.5,-686 561.5,-686 557.5,-682 557.5,-650 607.5,-650 611.5,-654 611.5,-686"/>
+<polyline fill="none" stroke="black" points="607.5,-682 557.5,-682"/>
+<polyline fill="none" stroke="black" points="607.5,-682 607.5,-650"/>
+<polyline fill="none" stroke="black" points="607.5,-682 611.5,-686"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="584.5" y="-666.1">4.75kB</text>
+</a>
+</g>
+</g>
+<!-- N34&#45;&gt;NN34_0 -->
+<g class="edge" id="edge31"><title>N34-&gt;NN34_0</title>
+<g id="a_edge31"><a xlink:title="514.38kB">
+<path fill="none" stroke="black" d="M 584.5 -748.785 C 584.5 -732.321 584.5 -712.306 584.5 -696.442"/>
+<polygon fill="black" stroke="black" points="588,-696.216 584.5,-686.216 581,-696.216 588,-696.216"/>
+</a>
+</g>
+<g id="a_edge31-label"><a xlink:title="514.38kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="613.5" y="-711.8"> 514.38kB</text>
+</a>
+</g>
+</g>
+<!-- NN35_0 -->
+<g class="node" id="NN35_0"><title>NN35_0</title>
+<g id="a_NN35_0"><a xlink:title="514kB">
+<polygon fill="#f8f8f8" stroke="black" points="1496.5,-1188 1446.5,-1188 1442.5,-1184 1442.5,-1152 1492.5,-1152 1496.5,-1156 1496.5,-1188"/>
+<polyline fill="none" stroke="black" points="1492.5,-1184 1442.5,-1184"/>
+<polyline fill="none" stroke="black" points="1492.5,-1184 1492.5,-1152"/>
+<polyline fill="none" stroke="black" points="1492.5,-1184 1496.5,-1188"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1469.5" y="-1168.1">4kB</text>
+</a>
+</g>
+</g>
+<!-- N35&#45;&gt;NN35_0 -->
+<g class="edge" id="edge32"><title>N35-&gt;NN35_0</title>
+<g id="a_edge32"><a xlink:title="514kB">
+<path fill="none" stroke="black" d="M 1469.5 -1279.91 C 1469.5 -1256.93 1469.5 -1222.36 1469.5 -1198.35"/>
+<polygon fill="black" stroke="black" points="1473,-1198.14 1469.5,-1188.14 1466,-1198.14 1473,-1198.14"/>
+</a>
+</g>
+<g id="a_edge32-label"><a xlink:title="514kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1489.5" y="-1231.8"> 514kB</text>
+</a>
+</g>
+</g>
+<!-- N36&#45;&gt;N34 -->
+<g class="edge" id="edge70"><title>N36-&gt;N34</title>
+<g id="a_edge70"><a xlink:title="github.com/pingcap/tidb/session.(*session).loadCommonGlobalVariablesIfNeeded ... github.com/pingcap/tidb/sessionctx/variable.(*SessionVars).SetSystemVar (514.38kB)">
+<path fill="none" stroke="#b2aea4" stroke-dasharray="1px, 5px" d="M 484.513 -905.916 C 502.453 -883.683 531.117 -848.159 553.164 -820.835"/>
+<polygon fill="#b2aea4" stroke="#b2aea4" points="555.927,-822.984 559.483,-813.004 550.479,-818.589 555.927,-822.984"/>
+</a>
+</g>
+<g id="a_edge70-label"><a xlink:title="github.com/pingcap/tidb/session.(*session).loadCommonGlobalVariablesIfNeeded ... github.com/pingcap/tidb/sessionctx/variable.(*SessionVars).SetSystemVar (514.38kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="565.5" y="-842.8"> 514.38kB</text>
+</a>
+</g>
+</g>
+<!-- N37 -->
+<g class="node" id="node37"><title>N37</title>
+<g id="a_node37"><a xlink:title="github.com/pingcap/tidb/session.drainRecordSet (513kB)">
+<polygon fill="#edeceb" stroke="#b2aea4" points="510,-806 413,-806 413,-756 510,-756 510,-806"/>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="461.5" y="-791.6">session</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="461.5" y="-777.6">drainRecordSet</text>
+<text font-family="Times New Roman,serif" font-size="13px" text-anchor="middle" x="461.5" y="-763.6">513kB (1.54%)</text>
+</a>
+</g>
+</g>
+<!-- N36&#45;&gt;N37 -->
+<g class="edge" id="edge72"><title>N36-&gt;N37</title>
+<g id="a_edge72"><a xlink:title="github.com/pingcap/tidb/session.(*session).loadCommonGlobalVariablesIfNeeded ... github.com/pingcap/tidb/session.drainRecordSet (513kB)">
+<path fill="none" stroke="#b2aea4" stroke-dasharray="1px, 5px" d="M 466.628 -905.916 C 465.653 -882.375 464.063 -843.933 462.911 -816.102"/>
+<polygon fill="#b2aea4" stroke="#b2aea4" points="466.404,-815.855 462.493,-806.009 459.41,-816.145 466.404,-815.855"/>
+</a>
+</g>
+<g id="a_edge72-label"><a xlink:title="github.com/pingcap/tidb/session.(*session).loadCommonGlobalVariablesIfNeeded ... github.com/pingcap/tidb/session.drainRecordSet (513kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="484.5" y="-842.8"> 513kB</text>
+</a>
+</g>
+</g>
+<!-- NN37_0 -->
+<g class="node" id="NN37_0"><title>NN37_0</title>
+<g id="a_NN37_0"><a xlink:title="513kB">
+<polygon fill="#f8f8f8" stroke="black" points="488.5,-686 438.5,-686 434.5,-682 434.5,-650 484.5,-650 488.5,-654 488.5,-686"/>
+<polyline fill="none" stroke="black" points="484.5,-682 434.5,-682"/>
+<polyline fill="none" stroke="black" points="484.5,-682 484.5,-650"/>
+<polyline fill="none" stroke="black" points="484.5,-682 488.5,-686"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="461.5" y="-666.1">2kB</text>
+</a>
+</g>
+</g>
+<!-- N37&#45;&gt;NN37_0 -->
+<g class="edge" id="edge33"><title>N37-&gt;NN37_0</title>
+<g id="a_edge33"><a xlink:title="513kB">
+<path fill="none" stroke="black" d="M 461.5 -755.915 C 461.5 -738.325 461.5 -714.459 461.5 -696.186"/>
+<polygon fill="black" stroke="black" points="465,-696.163 461.5,-686.163 458,-696.163 465,-696.163"/>
+</a>
+</g>
+<g id="a_edge33-label"><a xlink:title="513kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="481.5" y="-711.8"> 513kB</text>
+</a>
+</g>
+</g>
+<!-- NN38_0 -->
+<g class="node" id="NN38_0"><title>NN38_0</title>
+<g id="a_NN38_0"><a xlink:title="512.17kB">
+<polygon fill="#f8f8f8" stroke="black" points="1089.5,-1188 1039.5,-1188 1035.5,-1184 1035.5,-1152 1085.5,-1152 1089.5,-1156 1089.5,-1188"/>
+<polyline fill="none" stroke="black" points="1085.5,-1184 1035.5,-1184"/>
+<polyline fill="none" stroke="black" points="1085.5,-1184 1085.5,-1152"/>
+<polyline fill="none" stroke="black" points="1085.5,-1184 1089.5,-1188"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1062.5" y="-1168.1">352B</text>
+</a>
+</g>
+</g>
+<!-- N38&#45;&gt;NN38_0 -->
+<g class="edge" id="edge34"><title>N38-&gt;NN38_0</title>
+<g id="a_edge34"><a xlink:title="512.17kB">
+<path fill="none" stroke="black" d="M 1062.5 -1279.91 C 1062.5 -1256.93 1062.5 -1222.36 1062.5 -1198.35"/>
+<polygon fill="black" stroke="black" points="1066,-1198.14 1062.5,-1188.14 1059,-1198.14 1066,-1198.14"/>
+</a>
+</g>
+<g id="a_edge34-label"><a xlink:title="512.17kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1091.5" y="-1231.8"> 512.17kB</text>
+</a>
+</g>
+</g>
+<!-- NN39_0 -->
+<g class="node" id="NN39_0"><title>NN39_0</title>
+<g id="a_NN39_0"><a xlink:title="512.05kB">
+<polygon fill="#f8f8f8" stroke="black" points="1817.5,-799 1767.5,-799 1763.5,-795 1763.5,-763 1813.5,-763 1817.5,-767 1817.5,-799"/>
+<polyline fill="none" stroke="black" points="1813.5,-795 1763.5,-795"/>
+<polyline fill="none" stroke="black" points="1813.5,-795 1813.5,-763"/>
+<polyline fill="none" stroke="black" points="1813.5,-795 1817.5,-799"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1790.5" y="-779.1">112B</text>
+</a>
+</g>
+</g>
+<!-- N39&#45;&gt;NN39_0 -->
+<g class="edge" id="edge35"><title>N39-&gt;NN39_0</title>
+<g id="a_edge35"><a xlink:title="512.05kB">
+<path fill="none" stroke="black" d="M 1790.5 -902.73 C 1790.5 -876.938 1790.5 -836.241 1790.5 -809.336"/>
+<polygon fill="black" stroke="black" points="1794,-809.075 1790.5,-799.075 1787,-809.075 1794,-809.075"/>
+</a>
+</g>
+<g id="a_edge35-label"><a xlink:title="512.05kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1819.5" y="-842.8"> 512.05kB</text>
+</a>
+</g>
+</g>
+<!-- NN40_0 -->
+<g class="node" id="NN40_0"><title>NN40_0</title>
+<g id="a_NN40_0"><a xlink:title="512.02kB">
+<polygon fill="#f8f8f8" stroke="black" points="1220.5,-1188 1170.5,-1188 1166.5,-1184 1166.5,-1152 1216.5,-1152 1220.5,-1156 1220.5,-1188"/>
+<polyline fill="none" stroke="black" points="1216.5,-1184 1166.5,-1184"/>
+<polyline fill="none" stroke="black" points="1216.5,-1184 1216.5,-1152"/>
+<polyline fill="none" stroke="black" points="1216.5,-1184 1220.5,-1188"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="1193.5" y="-1168.1">48B</text>
+</a>
+</g>
+</g>
+<!-- N40&#45;&gt;NN40_0 -->
+<g class="edge" id="edge36"><title>N40-&gt;NN40_0</title>
+<g id="a_edge36"><a xlink:title="512.02kB">
+<path fill="none" stroke="black" d="M 1193.5 -1279.91 C 1193.5 -1256.93 1193.5 -1222.36 1193.5 -1198.35"/>
+<polygon fill="black" stroke="black" points="1197,-1198.14 1193.5,-1188.14 1190,-1198.14 1197,-1198.14"/>
+</a>
+</g>
+<g id="a_edge36-label"><a xlink:title="512.02kB">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="1222.5" y="-1231.8"> 512.02kB</text>
+</a>
+</g>
+</g>
+<!-- N42 -->
+<g class="node" id="node42"><title>N42</title>
+<g id="a_node42"><a xlink:title="github.com/pingcap/tidb/executor.(*InsertValues).addRecordWithAutoIDHint (4960.88kB)">
+<polygon fill="#ede3db" stroke="#b2672d" points="234.5,-690 122.5,-690 122.5,-646 234.5,-646 234.5,-690"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="178.5" y="-679.6">executor</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="178.5" y="-670.6">(*InsertValues)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="178.5" y="-661.6">addRecordWithAutoIDHint</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="178.5" y="-652.6">0 of 4960.88kB (14.90%)</text>
+</a>
+</g>
+</g>
+<!-- N41&#45;&gt;N42 -->
+<g class="edge" id="edge43"><title>N41-&gt;N42</title>
+<g id="a_edge43"><a xlink:title="github.com/pingcap/tidb/executor.(*InsertExec).exec ... github.com/pingcap/tidb/executor.(*InsertValues).addRecordWithAutoIDHint (4960.88kB)">
+<path fill="none" stroke="#b2672d" stroke-dasharray="1px, 5px" d="M 178.5 -758.86 C 178.5 -742.273 178.5 -718.933 178.5 -700.198"/>
+<polygon fill="#b2672d" stroke="#b2672d" points="182,-700.061 178.5,-690.061 175,-700.061 182,-700.061"/>
+</a>
+</g>
+<g id="a_edge43-label"><a xlink:title="github.com/pingcap/tidb/executor.(*InsertExec).exec ... github.com/pingcap/tidb/executor.(*InsertValues).addRecordWithAutoIDHint (4960.88kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="210.5" y="-711.8"> 4960.88kB</text>
+</a>
+</g>
+</g>
+<!-- N42&#45;&gt;N8 -->
+<g class="edge" id="edge44"><title>N42-&gt;N8</title>
+<g id="a_edge44"><a xlink:title="github.com/pingcap/tidb/executor.(*InsertValues).addRecordWithAutoIDHint -&gt; github.com/pingcap/tidb/table/tables.(*TableCommon).AddRecord (4960.88kB)">
+<path fill="none" stroke="#b2672d" d="M 178.5 -645.823 C 178.5 -634.397 178.5 -619.68 178.5 -605.111"/>
+<polygon fill="#b2672d" stroke="#b2672d" points="182,-605.091 178.5,-595.091 175,-605.091 182,-605.091"/>
+</a>
+</g>
+<g id="a_edge44-label"><a xlink:title="github.com/pingcap/tidb/executor.(*InsertValues).addRecordWithAutoIDHint -&gt; github.com/pingcap/tidb/table/tables.(*TableCommon).AddRecord (4960.88kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="210.5" y="-616.8"> 4960.88kB</text>
+</a>
+</g>
+</g>
+<!-- N44 -->
+<g class="node" id="node44"><title>N44</title>
+<g id="a_node44"><a xlink:title="github.com/pingcap/tidb/kv.(*memdbArena).alloc (3424.73kB)">
+<polygon fill="#ede6e0" stroke="#b28456" points="376,-278 269,-278 269,-234 376,-234 376,-278"/>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-267.6">kv</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-258.6">(*memdbArena)</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-249.6">alloc</text>
+<text font-family="Times New Roman,serif" font-size="8px" text-anchor="middle" x="322.5" y="-240.6">0 of 3424.73kB (10.29%)</text>
+</a>
+</g>
+</g>
+<!-- N43&#45;&gt;N44 -->
+<g class="edge" id="edge47"><title>N43-&gt;N44</title>
+<g id="a_edge47"><a xlink:title="github.com/pingcap/tidb/kv.(*memdb).set ... github.com/pingcap/tidb/kv.(*memdbArena).alloc (3424.73kB)">
+<path fill="none" stroke="#b28456" stroke-dasharray="1px, 5px" d="M 322.5 -328.897 C 322.5 -316.887 322.5 -301.617 322.5 -288.242"/>
+<polygon fill="#b28456" stroke="#b28456" points="326,-288.02 322.5,-278.02 319,-288.02 326,-288.02"/>
+</a>
+</g>
+<g id="a_edge47-label"><a xlink:title="github.com/pingcap/tidb/kv.(*memdb).set ... github.com/pingcap/tidb/kv.(*memdbArena).alloc (3424.73kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="354.5" y="-299.8"> 3424.73kB</text>
+</a>
+</g>
+</g>
+<!-- N44&#45;&gt;N7 -->
+<g class="edge" id="edge48"><title>N44-&gt;N7</title>
+<g id="a_edge48"><a xlink:title="github.com/pingcap/tidb/kv.(*memdbArena).alloc -&gt; github.com/pingcap/tidb/kv.(*memdbArena).enlarge (3424.73kB)">
+<path fill="none" stroke="#b28456" d="M 322.5 -233.999 C 322.5 -222.56 322.5 -207.794 322.5 -193.212"/>
+<polygon fill="#b28456" stroke="#b28456" points="326,-193.189 322.5,-183.189 319,-193.189 326,-193.189"/>
+</a>
+</g>
+<g id="a_edge48-label"><a xlink:title="github.com/pingcap/tidb/kv.(*memdbArena).alloc -&gt; github.com/pingcap/tidb/kv.(*memdbArena).enlarge (3424.73kB)">
+<text font-family="Times New Roman,serif" font-size="14px" text-anchor="middle" x="354.5" y="-204.8"> 3424.73kB</text>
+</a>
+</g>
+</g>
+</g>
+</svg>
