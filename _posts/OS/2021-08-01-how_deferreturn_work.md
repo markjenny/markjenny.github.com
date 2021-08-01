@@ -5,7 +5,7 @@ comments: true
 ---
 
 
-> 本文将简单地分析movq指令和leaq指令对比之间的区别
+> 本文将条分缕析地说明deferreturn循环执行的原理
 
 ------
 ## deferrenturn如何实现循环处理
