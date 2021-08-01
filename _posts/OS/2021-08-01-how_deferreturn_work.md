@@ -1,4 +1,14 @@
-# deferrenturn如何实现循环处理
+---
+layout: article
+title: deferrenturn如何实现循环处理
+comments: true
+---
+
+
+> 本文将简单地分析movq指令和leaq指令对比之间的区别
+
+------
+## deferrenturn如何实现循环处理
 
 我们知道当程序使用了defer关键字后，会在调用defer处注册defer函数，并在函数RET前执行deferreturn函数；那一个deferreturn函数如何把所有的defer函数全部执行完呢？
 我们可以首先看一下deferreturn函数：
@@ -74,6 +84,16 @@ TEXT runtime·jmpdefer(SB), NOSPLIT, $0-16
 
 引用一下上述文章中的段落：
 > 什么意思？当执行完 deferreturn 函数之后，执行流程会返回到 CALL deferreturn 的下一条指令，将这个值减少 5B，也就又回到了 CALL deferreturn 指令，从而实现了“递归地”调用 deferreturn 函数的效果。当然，栈却不会在增长！
+
+大家可能对5B比较疑惑，为什么减了5Bytes就是CALL deferreturn指令了，可以`go tool compile`来看一下相应的汇编代码：
+```
+        0x005f 00095 (main.go:11)       JMP     97
+        0x0061 00097 (main.go:12)       XCHGL   AX, AX
+        0x0062 00098 (main.go:12)       CALL    runtime.deferreturn(SB)
+        0x0067 00103 (main.go:12)       MOVQ    80(SP), BP
+        0x006c 00108 (main.go:12)       ADDQ    $88, SP
+```
+通过上面的汇编代码可以清晰地看到，`CALL    runtime.deferreturn(SB)`占据了5Bytes的地址
 
 下面两条语句比较简单：`MOVQ	0(DX), BX`解引用`*funcval`值的并赋值给BX，通过查看funcval结构可知现在BX就是存储了函数地址:
 ```
