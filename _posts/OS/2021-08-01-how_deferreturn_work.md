@@ -2,7 +2,7 @@
 
 我们知道当程序使用了defer关键字后，会在调用defer处注册defer函数，并在函数RET前执行deferreturn函数；那一个deferreturn函数如何把所有的defer函数全部执行完呢？
 我们可以首先看一下deferreturn函数：
-```go
+```
 // Run a deferred function if there is one.
 // The compiler inserts a call to this at the end of any
 // function which calls defer.
@@ -48,7 +48,7 @@ func deferreturn(arg0 uintptr) { // arg0是defer函数的参数位置，这�
 }
 ```
 如果从deferreturn这个函数的角度来看，这是里并没有在函数调用上有什么特殊处理，秘密都来自jmpdefer函数，下面列出jmpdefer函数代码：
-```asm
+```
 // func jmpdefer(fv *funcval, argp uintptr)
 // argp is a caller SP.
 // called from deferreturn.
@@ -76,7 +76,7 @@ TEXT runtime·jmpdefer(SB), NOSPLIT, $0-16
 > 什么意思？当执行完 deferreturn 函数之后，执行流程会返回到 CALL deferreturn 的下一条指令，将这个值减少 5B，也就又回到了 CALL deferreturn 指令，从而实现了“递归地”调用 deferreturn 函数的效果。当然，栈却不会在增长！
 
 下面两条语句比较简单：`MOVQ	0(DX), BX`解引用`*funcval`值的并赋值给BX，通过查看funcval结构可知现在BX就是存储了函数地址:
-```go
+```
 type funcval struct {
 	fn uintptr
 	// variable-size, fn-specific data here
