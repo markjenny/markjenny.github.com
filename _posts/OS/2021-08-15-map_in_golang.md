@@ -271,8 +271,8 @@ func mapaccess2(t *maptype, h *hmap, key unsafe.Pointer) (unsafe.Pointer, bool) 
 
 ```go
 if raceenabled && h != nil {
-        callerpc := getcallerpc()
-        racereadpc(unsafe.Pointer(h), callerpc, funcPC(mapaccess2_faststr))
+    callerpc := getcallerpc()
+    racereadpc(unsafe.Pointer(h), callerpc, funcPC(mapaccess2_faststr))
 }
 ```
 
@@ -462,7 +462,7 @@ func reflect_mapassign(t *maptype, h *hmap, key unsafe.Pointer, elem unsafe.Poin
 
 从上述代码中的`typedmemmove`就是看出，我们暗道key对应的额val位置后，在使用mememove进行夫复制。
 
-那么具体是怎么复制的呢？其实赋值是在编译器实现的，我们随便写一个代码，并且查看它的汇编；
+那么具体是怎么复制的呢？其实赋值是在编译器实现的，我们随便写一个代码，并且查看它的汇编: 
 
 ```go
 package main
@@ -547,6 +547,7 @@ type bmap struct {
 
 ~~**应该是在makemap函数中调用的makeBucketArray函数中完成的**。~~
 真正的原理应该如下(参照文章——————[3.3 哈希表](https://draveness.me/golang/docs/part2-foundation/ch03-datastructure/golang-hashmap/#332-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84))：
+
 这个bmap是go源代码中的结构，在运行期间，runtime.bmap 结构体其实不止包含 tophash 字段，因为哈希表中可能存储不同类型的键值对，而且 Go 语言也不支持泛型，所以键值对占据的内存空间大小只能在编译时进行推导。runtime.bmap 中的其他字段在运行时也都是通过计算内存地址的方式访问的，所以它的定义中就不包含这些字段，不过我们能根据编译期间的 cmd/compile/internal/gc.bmap中推断出该map的结构（注：随着go版本的升级，现在负责这个转换功能的是在函数MapBucketType）
 
 ```go
@@ -562,7 +563,6 @@ type bmap struct {
 并且在编译器我们创建了maptype(type.go)而其中包含各种结构：
 
 ```go
-
 // Needs to be in sync with ../cmd/link/internal/ld/decodesym.go:/^func.commonsize,
 // ../cmd/compile/internal/reflectdata/reflect.go:/^func.dcommontype and
 // ../reflect/type.go:/^type.rtype.
