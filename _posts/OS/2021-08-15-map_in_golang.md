@@ -1,4 +1,14 @@
-# Go从源码到应用
+---
+layout: article
+title: map实现分析
+comments: true
+---
+
+
+> 本文是在学习了曹大和draveness的文章后加入了少量自己的理解，学习为主，如果您发现文章观点错误，请在评论中不吝赐教。
+
+------
+
 ## 08.map实现分析
 **注：本文是在看了曹大的文章后进行的一点自己的分析或是后期准备分析的东西，其中我自己在代码中的备注均是以【me：】开头的曹大的文章在此————[map](https://github.com/cch123/golang-notes/blob/master/map.md)**
 首先是map的结构图，
