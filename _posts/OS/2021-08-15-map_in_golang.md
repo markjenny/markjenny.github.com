@@ -508,12 +508,10 @@ func main() {
 判断该map是否是正在扩张的状态
 
 ```go
-
 // growing reports whether h is growing. The growth may be to the same size or bigger.
 func (h *hmap) growing() bool {
-    return h.oldbuckets != nil
+    return h.oldbuckets != nil
 }
-
 ```
 
 growWork的相关函数：
