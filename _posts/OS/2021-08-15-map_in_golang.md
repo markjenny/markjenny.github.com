@@ -509,8 +509,8 @@ func main() {
 
 ```go
 // growing reports whether h is growing. The growth may be to the same size or bigger.
-func (h *hmap) growing() bool {
-    return h.oldbuckets != nil
+func (h *hmap) growing() bool {
+    return h.oldbuckets != nil
 }
 ```
 
