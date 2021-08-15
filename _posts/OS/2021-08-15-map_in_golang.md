@@ -533,13 +533,11 @@ func growWork(t *maptype, h *hmap, bucket uintptr) {
 
 相关dataOffSet计算方法，个人觉得比较精妙：
 
-```go
-
+```
 dataOffset = unsafe.Offsetof(struct {
     b bmap
     v int64
 }{}.v)
-
 ```
 
 目前有一个小问题，就是在看到bmap并不是像我们在[博客](https://github.com/cch123/golang-notes/blob/master/map.md)中看到的是有很多数据成员的，它其实只有一个tophash成员，那它是如何完成数据申请的呢？我后面需要研究一下：
