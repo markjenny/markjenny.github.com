@@ -9,6 +9,8 @@ comments: true
 
 ------
 
+# tidb中的SQL语法分析学习
+
 之前看了很久的lex && yacc，但是由于本人对编译原理不是很懂（留下了没有技术的泪水。。。），所以看了几次都觉得了解的不是很深入；这次再学习tidb的SQL语法分析时感觉有一些小领悟。
 
 之前在学习的时候，有一些文章如：[Lex和Yacc——Lex学习](https://niyanchun.com/yacc-learning.html)以及[TiDB源码阅读笔记（二） 简单理解 Lex & Yacc](https://zhuanlan.zhihu.com/p/165488348)写的非常好，我们知道yacc会按照你写的语法规则来对token列表进行分析，生成最后的AST；
