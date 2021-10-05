@@ -7,11 +7,10 @@
     var gitalk = new Gitalk({
         clientID: '78ad4b1dafbc30d1be0e',
         clientSecret: 'c93ea0be0f16ee95156a192ecec9a2545b0f285c',
-        repo: 'https://markjenny.github.io/',
+        repo: 'blog-comments',
         owner: 'markjenny',
         admin: ['markjenny'],
-        id: md5(location.pathname),
-        
+        id: md5(location.pathname),  
     });
     gitalk.render('gitalk-container');
 </script> 
