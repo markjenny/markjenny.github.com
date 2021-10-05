@@ -15,7 +15,7 @@ comments: true
 [map 源码分析](https://github.com/cch123/golang-notes/blob/master/map.md)
 map的关键数据结构如下：
 
-```go
+```
 const (
     // 一个 bucket 最多能放的元素数
     bucketCntBits = 3
@@ -105,7 +105,7 @@ type bmap struct {
 
 在初始化map时，编译器会根据你在创建map时指定的capacity来决定是使用makemap_smal创建小的map还是使用makemap创建大的map；如果在创建map时没有指定capacity，则使用makemap_small创建小map； 
 
-```go
+```
 // make(map[k]v, hint)
 // 如果编译器认为 map 和第一个 bucket 可以直接创建在栈上，h 和 bucket 可能都是非空
 // 上面这句话的意思是如果编译器认为map可以创建在堆栈上，那h肯定早就创建好了，那么调用makemap时第三个参数就一定
@@ -155,7 +155,7 @@ func makemap(t *maptype, hint int, h *hmap) *hmap {
 
 当然有的时候，使用make创建map时没有真正地使用makemap，如下所示：
 
-```go
+```
 package main
 
 func main() {
@@ -167,7 +167,7 @@ func main() {
 你看不到真正的makemap或者makemap_small函数，这里我盲猜是因为堆栈上创建并且较小，所以没有使用这个函数，[**TODO**]这里具体的原因我们以后有机会再仔细考虑。
 make map的语法分析是在`cmd/compile/internal/gc/walk.go:1192`中，相关代码如下，简单看一下就好：
 
-```go
+```
 	case OMAKEMAP:
 		t := n.Type
 		hmapType := hmap(t)
@@ -185,7 +185,7 @@ make map的语法分析是在`cmd/compile/internal/gc/walk.go:1192`中，相关�
 具体选择哪一种是由编译器在编译器决定的；
 相关的访问代码如下：
 
-```go
+```
 func mapaccess2(t *maptype, h *hmap, key unsafe.Pointer) (unsafe.Pointer, bool) {
     // map 为空，或者元素数为 0，直接返回未找到
     if h == nil || h.count == 0 {
@@ -269,13 +269,11 @@ func mapaccess2(t *maptype, h *hmap, key unsafe.Pointer) (unsafe.Pointer, bool) 
 
 上面这个代码其实是早期的go版本代码，现在这个代码中包含了**raceenable**字段，是用于竞态检测的；go的build和run命令支持选项-race。如果启用该选项，发现存在数据竞态就会报警。-race在源码中对应的变量是raceenabled，当启用-race，raceenabled就是true。在mapaccess中其实就可以看到相关的数据竞态检查：
 
-```go
-
+```
 if raceenabled && h != nil {
     callerpc := getcallerpc()
     racereadpc(unsafe.Pointer(h), callerpc, funcPC(mapaccess2_faststr))
 }
-
 ```
 
 具体竞态检测后面可以参照一下这两篇文章[Go 译文之竞态检测器 race](https://segmentfault.com/a/1190000020107431)和[
@@ -299,7 +297,7 @@ E --> |no|G[mapassign]
 
 这几个assign函数都是大同小异，拿其中一个即可：
 
-```go
+```
 // 和 mapaccess 函数差不多，但在没有找到 key 时，会为 key 分配一个新的槽位
 func mapassign(t *maptype, h *hmap, key unsafe.Pointer) unsafe.Pointer {
     if h == nil {
@@ -456,7 +454,7 @@ done:
 ~~之前没有太看懂这个函数，这个函数应该是根据key，分配出val的地址，后续将key的值拷贝到该内存，从go1.17的代码中可以发现用法~~
 (下面的代码此时也应该是删除状态的，但是因为我还是不懂这个函数什么时候会使用，所以先放到这里吧。。。)：
 
-```go
+```
 //go:linkname reflect_mapassign reflect.mapassign
 func reflect_mapassign(t *maptype, h *hmap, key unsafe.Pointer, elem unsafe.Pointer) {
 	p := mapassign(t, h, key)
@@ -468,7 +466,7 @@ func reflect_mapassign(t *maptype, h *hmap, key unsafe.Pointer, elem unsafe.Poin
 
 那么具体是怎么复制的呢？其实赋值是在编译器实现的，我们随便写一个代码，并且查看它的汇编: 
 
-```go
+```
 package main
 import "fmt"
 func main() {
@@ -501,7 +499,7 @@ func main() {
 上面涉及到了两个我感兴趣的函数，一个是growing，一个是其相关的growWork和其内部的**evacuate**函数
 判断该map是否是正在扩张的状态
 
-```go
+```
 // growing reports whether h is growing. The growth may be to the same size or bigger.
 func (h *hmap) growing() bool {
     return h.oldbuckets != nil
@@ -510,7 +508,7 @@ func (h *hmap) growing() bool {
 
 growWork的相关函数：
 
-```go
+```
 func growWork(t *maptype, h *hmap, bucket uintptr) {
     // make sure we evacuate the oldbucket corresponding
     // to the bucket we're about to use
@@ -534,7 +532,7 @@ dataOffset = unsafe.Offsetof(struct {
 
 目前有一个小问题，就是在看到bmap并不是像我们在[博客](https://github.com/cch123/golang-notes/blob/master/map.md)中看到的是有很多数据成员的，它其实只有一个tophash成员，那它是如何完成数据申请的呢？我后面需要研究一下：
 
-```go
+```
 // A bucket for a Go map.
 type bmap struct {
     // tophash generally contains the top byte of the hash value
@@ -554,7 +552,7 @@ type bmap struct {
 
 这个bmap是go源代码中的结构，在运行期间，runtime.bmap 结构体其实不止包含 tophash 字段，因为哈希表中可能存储不同类型的键值对，而且 Go 语言也不支持泛型，所以键值对占据的内存空间大小只能在编译时进行推导。runtime.bmap 中的其他字段在运行时也都是通过计算内存地址的方式访问的，所以它的定义中就不包含这些字段，不过我们能根据编译期间的 cmd/compile/internal/gc.bmap中推断出该map的结构（注：随着go版本的升级，现在负责这个转换功能的是在函数MapBucketType）
 
-```go
+```
 type bmap struct {
     topbits  [8]uint8
     keys     [8]keytype
@@ -606,7 +604,7 @@ type maptype struct {
 
 删除相关的代码如下：
 
-```go
+```
 func mapdelete(t *maptype, h *hmap, key unsafe.Pointer) {
     if h == nil || h.count == 0 {
         return
@@ -692,7 +690,7 @@ search:
 
 删掉相关代码如下：
 
-```go
+```
 func mapdelete(t *maptype, h *hmap, key unsafe.Pointer) {
     if h == nil || h.count == 0 {
         return
@@ -779,7 +777,7 @@ search:
 
 在map写过程(mapassign或mapdelete)中，如果map还是growing的状态，那我们会对相关的bucket进行进行元素扩散，那么相关的代码如下：
 
-```go
+```
 func evacuate(t *maptype, h *hmap, oldbucket uintptr) {
     b := (*bmap)(add(h.oldbuckets, oldbucket*uintptr(t.bucketsize)))
     // me: newbit为rehash阶段对应的老bucket的个数
