@@ -10,7 +10,7 @@
         repo: 'blog-comments',
         owner: 'markjenny',
         admin: ['markjenny'],
-        id: md5(location.pathname),  
+        id: location.pathname,  
     });
     gitalk.render('gitalk-container');
 </script> 
