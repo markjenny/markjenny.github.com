@@ -300,7 +300,6 @@ E --> |no|G[mapassign]
 这几个assign函数都是大同小异，拿其中一个即可：
 
 ```go
-
 // 和 mapaccess 函数差不多，但在没有找到 key 时，会为 key 分配一个新的槽位
 func mapassign(t *maptype, h *hmap, key unsafe.Pointer) unsafe.Pointer {
     if h == nil {
@@ -452,20 +451,17 @@ done:
     }
     return val
 }
-
 ```
 
 ~~之前没有太看懂这个函数，这个函数应该是根据key，分配出val的地址，后续将key的值拷贝到该内存，从go1.17的代码中可以发现用法~~
 (下面的代码此时也应该是删除状态的，但是因为我还是不懂这个函数什么时候会使用，所以先放到这里吧。。。)：
 
 ```go
-
 //go:linkname reflect_mapassign reflect.mapassign
 func reflect_mapassign(t *maptype, h *hmap, key unsafe.Pointer, elem unsafe.Pointer) {
 	p := mapassign(t, h, key)
 	typedmemmove(t.elem, p, elem)
 }
-
 ```
 
 从上述代码中的`typedmemmove`就是看出，我们暗道key对应的额val位置后，在使用mememove进行夫复制。
@@ -473,7 +469,6 @@ func reflect_mapassign(t *maptype, h *hmap, key unsafe.Pointer, elem unsafe.Poin
 那么具体是怎么复制的呢？其实赋值是在编译器实现的，我们随便写一个代码，并且查看它的汇编: 
 
 ```go
-
 package main
 import "fmt"
 func main() {
@@ -481,7 +476,6 @@ func main() {
     m[0] = "88"
     fmt.Println(m[0])
 }
-
 ```
 
 相关的汇编代码如下：
@@ -517,7 +511,6 @@ func (h *hmap) growing() bool {
 growWork的相关函数：
 
 ```go
-
 func growWork(t *maptype, h *hmap, bucket uintptr) {
     // make sure we evacuate the oldbucket corresponding
     // to the bucket we're about to use
@@ -528,7 +521,6 @@ func growWork(t *maptype, h *hmap, bucket uintptr) {
         evacuate(t, h, h.nevacuate)
     }
 }
-
 ```
 
 相关dataOffSet计算方法，个人觉得比较精妙：
@@ -543,7 +535,6 @@ dataOffset = unsafe.Offsetof(struct {
 目前有一个小问题，就是在看到bmap并不是像我们在[博客](https://github.com/cch123/golang-notes/blob/master/map.md)中看到的是有很多数据成员的，它其实只有一个tophash成员，那它是如何完成数据申请的呢？我后面需要研究一下：
 
 ```go
-
 // A bucket for a Go map.
 type bmap struct {
     // tophash generally contains the top byte of the hash value
@@ -556,7 +547,6 @@ type bmap struct {
     // us to eliminate padding which would be needed for, e.g., map[int64]int8.
     // Followed by an overflow pointer.
 }
-
 ```
 
 ~~**应该是在makemap函数中调用的makeBucketArray函数中完成的**。~~
@@ -565,7 +555,6 @@ type bmap struct {
 这个bmap是go源代码中的结构，在运行期间，runtime.bmap 结构体其实不止包含 tophash 字段，因为哈希表中可能存储不同类型的键值对，而且 Go 语言也不支持泛型，所以键值对占据的内存空间大小只能在编译时进行推导。runtime.bmap 中的其他字段在运行时也都是通过计算内存地址的方式访问的，所以它的定义中就不包含这些字段，不过我们能根据编译期间的 cmd/compile/internal/gc.bmap中推断出该map的结构（注：随着go版本的升级，现在负责这个转换功能的是在函数MapBucketType）
 
 ```go
-
 type bmap struct {
     topbits  [8]uint8
     keys     [8]keytype
@@ -573,13 +562,11 @@ type bmap struct {
     pad      uintptr
     overflow uintptr
 }
-
 ```
 
 并且在编译器我们创建了maptype(type.go)而其中包含各种结构：
 
 ```go
-
 // Needs to be in sync with ../cmd/link/internal/ld/decodesym.go:/^func.commonsize,
 // ../cmd/compile/internal/reflectdata/reflect.go:/^func.dcommontype and
 // ../reflect/type.go:/^type.rtype.
@@ -615,13 +602,11 @@ type maptype struct {
     bucketsize uint16 // size of bucket
     flags      uint32
 }
-
 ```
 
 删除相关的代码如下：
 
 ```go
-
 func mapdelete(t *maptype, h *hmap, key unsafe.Pointer) {
     if h == nil || h.count == 0 {
         return
@@ -701,7 +686,6 @@ search:
     }
     h.flags &^= hashWriting
 }
-
 ```
 
 **map不会自动的缩容，除非你把整个map删除掉。**
@@ -709,7 +693,6 @@ search:
 删掉相关代码如下：
 
 ```go
-
 func mapdelete(t *maptype, h *hmap, key unsafe.Pointer) {
     if h == nil || h.count == 0 {
         return
@@ -792,13 +775,11 @@ search:
     }
     h.flags &^= hashWriting
 }
-
 ```
 
 在map写过程(mapassign或mapdelete)中，如果map还是growing的状态，那我们会对相关的bucket进行进行元素扩散，那么相关的代码如下：
 
 ```go
-
 func evacuate(t *maptype, h *hmap, oldbucket uintptr) {
     b := (*bmap)(add(h.oldbuckets, oldbucket*uintptr(t.bucketsize)))
     // me: newbit为rehash阶段对应的老bucket的个数
@@ -941,5 +922,4 @@ func evacuate(t *maptype, h *hmap, oldbucket uintptr) {
         advanceEvacuationMark(h, t, newbit)
     }
 }
-
 ```
