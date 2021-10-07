@@ -213,11 +213,6 @@ func (b *PlanBuilder) buildSelect(ctx context.Context, sel *ast.SelectStmt) (p L
 3. 最后，根据sel.Fields字段形成了LogicalProjection类型的logical plan并将第2步中的core.LogicalSelection作为了自己的children；
 
 通过上面的基础处理之后，ast就会形成如下图所示的logical operator tree；
-```mermaid
-graph TD;
-  LogicalProjection-->LogicalSelection
-  LogicalSelection-->DataSource
-```
 <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
 
