@@ -4,7 +4,11 @@ title: Linux中的Go地址空间状态转换函数浅析
 comments: true
 ---
 
+
+
 > 本文将对Go语言中内存状态的部分细节进行阐述，欢迎一起讨论指正。
+
+
 
 # Linux中的Go地址空间状态转换函数浅析
 
@@ -14,7 +18,7 @@ comments: true
 
 下图是地址空间状态转换图，取自[7.1 内存分配器](https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-memory-allocator/)一文；
 
-![地址空间的状态转换](https://img.draveness.me/2020-02-29-15829868066474-memory-regions-states-and-transitions.png)
+![地址空间的状态转换](https://github.com/markjenny/markjenny.github.com/blob/master/images/2020-02-29-15829868066474-memory-regions-states-and-transitions.png)
 
 图中可以看到有以下几个函数：
 
@@ -40,7 +44,6 @@ comments: true
 我们以1.14.12中的代码来做说明，各个系统调用函数具体细节如下：
 
 * sysAlloc
-
   ```
   func sysAlloc(n uintptr, sysStat *uint64) unsafe.Pointer {
       // 主要关注mmap中的prot字段和flag字段
@@ -72,7 +75,6 @@ comments: true
 * sysUnused
 
   相关代码如下：
-
   ```
   func sysUnused(v unsafe.Pointer, n uintptr) {
   	// By default, Linux's "transparent huge page" support will
@@ -161,8 +163,7 @@ comments: true
   ```
 
 * sysUsed
-
-  ```
+   ```
   func sysUsed(v unsafe.Pointer, n uintptr) {
   	// Partially undo the NOHUGEPAGE marks from sysUnused
   	// for whole huge pages between v and v+n. This may
@@ -203,7 +204,6 @@ comments: true
   ```
   
 * sysFree
-
   ```
   func sysFree(v unsafe.Pointer, n uintptr, sysStat *uint64) {
   	mSysStatDec(sysStat, n)
@@ -218,7 +218,6 @@ comments: true
   使用脚本生成的一般都是比较简单的，一半都是系统调用ID+函数参数
 
 * sysFault
-
   ```
   func sysFault(v unsafe.Pointer, n uintptr) {
     // 我们已经在前文中的sysAlloc有说明mmap中的MAP_ANON参数和MAP_PRIVATE，针对
@@ -228,7 +227,6 @@ comments: true
   ```
   
 * sysReserve
-
   ```
   func sysReserve(v unsafe.Pointer, n uintptr) unsafe.Pointer {
   	// mmap中的参数中的其他参数在上文中已经表述过了，该函数中的mmap中的第三个参数prot被设置成了PROT_NONE
@@ -242,7 +240,6 @@ comments: true
   ```
   
 * sysMap
-
   ```
   func sysMap(v unsafe.Pointer, n uintptr, sysStat *uint64) {
   	mSysStatInc(sysStat, n)
