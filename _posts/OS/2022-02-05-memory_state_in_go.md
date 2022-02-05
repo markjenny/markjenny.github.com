@@ -42,29 +42,29 @@ comments: true
 * sysAlloc
 
   ```
-  func sysAlloc(n uintptr, sysStat *uint64) unsafe.Pointer {
-  	// 主要关注mmap中的prot字段和flag字段
-  	// prot:映射区域的保护方式。PROT_READ——映射区域可被读取，PROT_WRITE——映射区域可被写入
-  	// flag:影响映射区域的各种特性。在调用mmap()时必须要指定MAP_SHARED 或MAP_PRIVATE
-  	//      MAP_ANON建立匿名映射。此时会忽略参数fd，不涉及文件，而且映射区域无法和其他进程共享
-  	//      该特性会映射出一块0值的内存区域;
-  	//      MAP_PRIVATE 对映射区域的写入操作会产生一个映射文件的复制，即私人的“写入时复制”
-  	//      （copy on write）对此区域作的任何修改都不会写回原来的文件内容
-  	p, err := mmap(nil, n, _PROT_READ|_PROT_WRITE, _MAP_ANON|_MAP_PRIVATE, -1, 0)
-  	if err != 0 {
-  		if err == _EACCES {
-  			print("runtime: mmap: access denied\n")
-  			exit(2)
-  		}
-  		if err == _EAGAIN {
-  			print("runtime: mmap: too much locked memory (check 'ulimit -l').\n")
-  			exit(2)
-  		}
-  		return nil
-  	}
-  	mSysStatInc(sysStat, n)
-  	return p
-  }
+    func sysAlloc(n uintptr, sysStat *uint64) unsafe.Pointer {
+      // 主要关注mmap中的prot字段和flag字段
+      // prot:映射区域的保护方式。PROT_READ——映射区域可被读取，PROT_WRITE——映射区域可被写入
+      // flag:影响映射区域的各种特性。在调用mmap()时必须要指定MAP_SHARED 或MAP_PRIVATE
+      //      MAP_ANON建立匿名映射。此时会忽略参数fd，不涉及文件，而且映射区域无法和其他进程共享
+      //      该特性会映射出一块0值的内存区域;
+      //      MAP_PRIVATE 对映射区域的写入操作会产生一个映射文件的复制，即私人的“写入时复制”
+      //      （copy on write）对此区域作的任何修改都不会写回原来的文件内容
+      p, err := mmap(nil, n, _PROT_READ|_PROT_WRITE, _MAP_ANON|_MAP_PRIVATE, -1, 0)
+      if err != 0 {
+          if err == _EACCES {
+            print("runtime: mmap: access denied\n")
+            exit(2)
+    		 }
+         if err == _EAGAIN {
+    			print("runtime: mmap: too much locked memory (check 'ulimit -l').\n")
+    			exit(2)
+    		}
+    		return nil
+    	}
+    	mSysStatInc(sysStat, n)
+    	return p
+    }
   ```
 
   从上面的源代码中可以看出`sysAlloc`函数创建出了一个给程序自己使用的初始化过的内存区域。
