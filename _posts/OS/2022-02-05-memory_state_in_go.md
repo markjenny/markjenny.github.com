@@ -42,7 +42,7 @@ comments: true
 * sysAlloc
 
   ```
-    func sysAlloc(n uintptr, sysStat *uint64) unsafe.Pointer {
+  func sysAlloc(n uintptr, sysStat *uint64) unsafe.Pointer {
       // 主要关注mmap中的prot字段和flag字段
       // prot:映射区域的保护方式。PROT_READ——映射区域可被读取，PROT_WRITE——映射区域可被写入
       // flag:影响映射区域的各种特性。在调用mmap()时必须要指定MAP_SHARED 或MAP_PRIVATE
@@ -64,7 +64,7 @@ comments: true
     	}
     	mSysStatInc(sysStat, n)
     	return p
-    }
+  }
   ```
 
   从上面的源代码中可以看出`sysAlloc`函数创建出了一个给程序自己使用的初始化过的内存区域。
