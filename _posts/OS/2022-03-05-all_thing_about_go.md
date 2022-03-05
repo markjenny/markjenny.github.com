@@ -120,7 +120,7 @@ nocgo:
 
 所以如果你是arm64架构并且不设计到cgo，那么这里应该没有什么作用，并且通过调试我们也可以发现直接RET了，如下图所示：
 
-![save_g直接返回](https://github.com/markjenny/markjenny.github.com/blob/master/images/save_g_ret.png)
+<img src="/images/save_g_ret.png"/>
 
 mcall后面暂时不是我感兴趣的了，就是切换到g0后直接调用mcall中的park_m进行执行，就是选取可以执行的g。
 
