@@ -131,3 +131,95 @@ sysmon中的retake函数会执行handoff来解绑m和p；然后再调用startm�
 ---------
 
 pageAlloc分配大页的函数中，其中有维持这些大页的结构；pāgeAlloc结构经过多个版本的变化，从: freelist->treap->radix tree，查询时间复杂度越来越低，结构越来越复杂。
+
+---------
+
+看了一些关于context代码的分析，感觉自己不太适合，尤其是关于`propagateCancel`这个函数的解释，我自己阐述一下：
+首先我们知道cancel context拥有parent context如果cancel后，如果他的子context是cancel context(这里我默认通过WithDeadline和WithTimeout创建的也是cancel context)的话，那么也会被cancel(前提是你配合Done()这个函数) ，能实现这个功能的就是因为在创建一个cancel context的时候去关联最近的cancel类型的祖先节点，具体是通过`propagateCancel`这个函数，现在我们逐句解释一下：
+
+```
+// 1.14版本的go语言代码
+// propagateCancel arranges for child to be canceled when parent is.
+func propagateCancel(parent Context, child canceler) {
+	done := parent.Done()
+	// 这里我看到有一些解释是说empty context类型的就直接返回了，但是其实value context的Done()函数返回的
+	// 也是nil，这个我觉得更确切的就是说明当前context的parent context的Done()函数没有实现，你根本就不可能
+	// 实现配合parent的cancel行为来搞事，你能实现的cancel场景只能靠自己，所以这里就没有必要和parent产生
+	// 关联了，所以直接return
+	if done == nil {
+		return // parent is never canceled
+	}
+
+	select {
+	case <-done:
+		// parent is already canceled
+		// 这里应该比较好理解，parent已经done了，context作为可以集联cancel的数据结构，现在也没什么等的了
+		// 直接cancel就完事了
+		child.cancel(false, parent.Err())
+		return
+	default:
+		// 有了这个case，编译器其实就帮忙转换成了selectnbchanrecv这个函数
+	}
+
+	// 这里的parentCancelCtx函数在1.14版本和大家在网上常看到的有点不太一样了，后面解释
+	if p, ok := parentCancelCtx(parent); ok {
+	  // 要操作cancel类型的parent的children数据，临界区需要加锁
+		p.mu.Lock()
+		if p.err != nil {
+			// parent has already been canceled
+			// 在select block中检查过，到这里可能仍然会发生parent has been cancelel的事情
+			// 所以需要再检查一遍
+			child.cancel(false, p.err)
+		} else {
+		  // lazy方式创建children
+			if p.children == nil {
+				p.children = make(map[canceler]struct{})
+			}
+			p.children[child] = struct{}{}
+		}
+		p.mu.Unlock()
+	} else {
+		atomic.AddInt32(&goroutines, +1)
+		// 走到这个分支，说明用户自己实现了Done接口，但是他不是我们常规的cancel类型（包括WithTimeout和WithDeadline生成的），但是也要实现和常规cancel类型一样的集联cancel功能
+		go func() {
+			select {
+			case <-parent.Done():
+				child.cancel(false, parent.Err())
+			case <-child.Done():
+			  // 用户自己的cancel不需要再处理什么了
+			}
+		}()
+	}
+}
+```
+
+`parentCancelCtx`相关函数如下：
+
+```
+// parentCancelCtx returns the underlying *cancelCtx for parent.
+// It does this by looking up parent.Value(&cancelCtxKey) to find
+// the innermost enclosing *cancelCtx and then checking whether
+// parent.Done() matches that *cancelCtx. (If not, the *cancelCtx
+// has been wrapped in a custom implementation providing a
+// different done channel, in which case we should not bypass it.)
+func parentCancelCtx(parent Context) (*cancelCtx, bool) {
+	done := parent.Done()
+	if done == closedchan || done == nil {
+		return nil, false
+	}
+	// Value接口会一直往上找，实现注释中说的find the innermost enclosing *cancelCtx
+	p, ok := parent.Value(&cancelCtxKey).(*cancelCtx)
+	if !ok {
+		return nil, false
+	}
+	p.mu.Lock()
+	// 判断parent的done和正规军（WithCancel、WithTimeout、WithDeadline创建的）的done是不是同一个东西
+	ok = p.done == done
+	p.mu.Unlock()
+	if !ok {
+	  // 不是同一个东西，所以在propagateCancel函数中要单开一个goroutine来做这个事情
+		return nil, false
+	}
+	return p, true
+}
+```
