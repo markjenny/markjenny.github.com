@@ -18,7 +18,7 @@ comments: true
 
 下图是地址空间状态转换图，取自[7.1 内存分配器](https://draveness.me/golang/docs/part3-runtime/ch07-memory/golang-memory-allocator/)一文；
 
-![地址空间的状态转换](https://github.com/markjenny/markjenny.github.com/blob/master/images/2020-02-29-15829868066474-memory-regions-states-and-transitions.png)
+<img src="/images/2020-02-29-15829868066474-memory-regions-states-and-transitions.png"/>
 
 图中可以看到有以下几个函数：
 
