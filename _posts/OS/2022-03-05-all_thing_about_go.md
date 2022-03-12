@@ -223,3 +223,115 @@ func parentCancelCtx(parent Context) (*cancelCtx, bool) {
 	return p, true
 }
 ```
+
+----
+之前有过在了解内存管理的源码是比较想知道的一个事情是，对于mcache、mspan这种管理类型数据的内存分配，是否也需要通过heapArena来提供相应的内存吗？
+
+我们首先可以看mcache的分配函数：
+
+```
+func allocmcache() *mcache {
+	var c *mcache
+	systemstack(func() {
+		lock(&mheap_.lock)
+		// mcache结构分配处
+		c = (*mcache)(mheap_.cachealloc.alloc())
+		c.flushGen = mheap_.sweepgen
+		unlock(&mheap_.lock)
+	})
+	for i := range c.alloc {
+		c.alloc[i] = &emptymspan
+	}
+	c.next_sample = nextSample()
+	return c
+}
+```
+
+从上文我们可以看到mcache这个结构是通过`mheap_.cachealloc.alloc()` 来进行分配的，因此我们可以看一下`cachealloc`的相关信息：
+
+```
+// Main malloc heap.
+// The heap itself is the "free" and "scav" treaps,
+// but all the other global data is here too.
+//
+// mheap must not be heap-allocated because it contains mSpanLists,
+// which must not be heap-allocated.
+//
+//go:notinheap
+type mheap struct {
+    // ...
+    spanalloc             fixalloc // allocator for span*
+    cachealloc            fixalloc // allocator for mcache*
+}
+```
+
+可以看到cachealloc是一个fixalloc，即分配固定长度的allocator，他的初始化位置如下：
+
+```
+// Initialize the heap.
+func (h *mheap) init() {
+	h.spanalloc.init(unsafe.Sizeof(mspan{}), recordspan, unsafe.Pointer(h), &memstats.mspan_sys)
+	// mcache的初始化
+	h.cachealloc.init(unsafe.Sizeof(mcache{}), nil, nil, &memstats.mcache_sys)
+	h.specialfinalizeralloc.init(unsafe.Sizeof(specialfinalizer{}), nil, nil, &memstats.other_sys)
+	// ...
+}
+```
+
+这里的初始化其实只是设定了单次分配的内存空间，及mcache关联的统计数据，细节如下：
+
+```
+// Initialize f to allocate objects of the given size,
+// using the allocator to obtain chunks of memory.
+func (f *fixalloc) init(size uintptr, first func(arg, p unsafe.Pointer), arg unsafe.Pointer, stat *uint64) {
+	f.size = size
+	f.first = first
+	f.arg = arg
+	f.list = nil
+	f.chunk = 0
+	f.nchunk = 0
+	f.inuse = 0
+	f.stat = stat
+	f.zero = true
+}
+```
+
+让我们再回到`a llocmcache`这个函数中的`mheap_.cachealloc.alloc()`中，相应的细节为：
+
+```
+func (f *fixalloc) alloc() unsafe.Pointer {
+	if f.size == 0 {
+		print("runtime: use of FixAlloc_Alloc before FixAlloc_Init\n")
+		throw("runtime: internal error")
+	}
+
+  	// 这个free就是buffer中常用的freelist，用来存储已经空闲的内存，为了下次使用
+	if f.list != nil {
+		v := unsafe.Pointer(f.list)
+		f.list = f.list.next
+		f.inuse += f.size
+		if f.zero {
+			memclrNoHeapPointers(v, f.size)
+		}
+		return v
+	}
+	if uintptr(f.nchunk) < f.size {
+	  	// 申请大块内存用来后续的持续分配内存，跟进去看可以发现这个函数最后调用了sysAlloc
+		f.chunk = uintptr(persistentalloc(_FixAllocChunk, 0, f.stat))
+		f.nchunk = _FixAllocChunk
+	}
+
+	v := unsafe.Pointer(f.chunk)
+	if f.first != nil {
+		f.first(f.arg, v)
+	}
+	f.chunk = f.chunk + f.size
+	f.nchunk -= uint32(f.size)
+	f.inuse += f.size
+	return v
+}
+```
+
+因此通过这个分析我们可以知道，像mcache这种管理类的数据结构，其内存的分配肯定是不走heapArena的方式。
+
+
