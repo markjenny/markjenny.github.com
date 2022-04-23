@@ -334,4 +334,62 @@ func (f *fixalloc) alloc() unsafe.Pointer {
 
 因此通过这个分析我们可以知道，像mcache这种管理类的数据结构，其内存的分配肯定是不走heapArena的方式。
 
+----------
 
+记chanrecv中不使用锁实现快速判断失败场景的小技巧
+
+我们知道锁的开销是很大的，对于大块的临界区判断逻辑，我们经常需要加锁来保证同步，但是如果只是单个变量的读写使用锁来避免竞争成本就太高了，更多的是使用atomic包中提供的函数。
+那么现在我们看一下在chanrecv中上述情况的使用，比较精妙，他利用了数据之前的逻辑关联，通过每个变量的atomic操作同样实现了类似加锁的效果。
+
+该段代码如下：
+```
+	// Fast path: check for failed non-blocking operation without acquiring the lock.
+	//
+	// After observing that the channel is not ready for receiving, we observe that the
+	// channel is not closed. Each of these observations is a single word-sized read
+	// (first c.sendq.first or c.qcount, and second c.closed).
+	// Because a channel cannot be reopened, the later observation of the channel
+	// being not closed implies that it was also not closed at the moment of the
+	// first observation. We behave as if we observed the channel at that moment
+	// and report that the receive cannot proceed.
+	//
+	// The order of operations is important here: reversing the operations can lead to
+	// incorrect behavior when racing with a close.
+	if !block && (c.dataqsiz == 0 && c.sendq.first == nil ||
+		c.dataqsiz > 0 && atomic.Loaduint(&c.qcount) == 0) &&
+		atomic.Load(&c.closed) == 0 {
+		return
+	}
+```
+
+注释中给了一些解释，但是有的地方我个人光看这个注释还是有点懵，就记录一下我的描述：
+这段代码的概要逻辑是，如果是非阻塞的recv操作并且chan中没有数据，那么直接返回；
+我们可以将上述代码的逻辑分成两步：
+1. 判断chan中是否要可以读取的数据；
+2. 判断chan是否已经关闭了；
+如果chan没有关闭，那么我们已知读不出数据的情况下，肯定就直接return (false, false)了；
+如果使用锁来同步的话，伪代码如下：
+```
+lock()
+chan is empty
+chan is not closed 
+unlock()
+Return
+```
+那么这个临界区内就两块逻辑，恰巧这两块逻辑其实都可以用atomic来实现，我们逐步分析；
+首先是`chan is empty`这段逻辑，原文的代码如下：
+```
+c.dataqsiz == 0 && c.sendq.first == nil ||
+		c.dataqsiz > 0 && atomic.Loaduint(&c.qcount) == 0
+```
+其中的c.dataqsiz是在编译期就可以确认的了，对于确定的channel其实就是执行`c.sendq.first == nil`或`atomic.Loaduint(&c.qcount) == 0`这两条指令都可以实现原子操作；
+
+其中`c.sendq.first == nil`这一句我认为至少在amd64架构下是可以实现原子读取first的内容，因为在atomic_amd64.go中load指针就是一句话的事func Load64(ptr *uint64) uint64 { return *ptr}，这说明指针数据可以直接原子获取指针内容；
+
+其中的c.dataqsiz是在编译期就可以确认的了，对于确定的channel其实就是执行`c.sendq.first == nil`或`atomic.Loaduint(&c.qcount) == 0`这两条指令都可以实现原子操作（；其中`c.sendq.first == nil`这一句我认为至少在amd64架构下是可以实现原子读取first的内容，因为在atomic_amd64.go中load指针就是一句话的事func Load64(ptr *uint64) uint64 { return *ptr}，这说明指针数据可以直接原子获取指针内容）；
+
+后面还接了一个原子读操作并判断是否为0，`atomic.Load(&c.closed) == 0`，那么现在就可以总结这两段逻辑主要就是：**原子读取channel中是否有数据**和**原子读取chan是否关闭**，这两段内容与其他goroutine产生操作重叠只有下面这种情况：
+a.原子读取channel中是否有数据—>b.其他goroutine对channel的close读写操作—>c.原子读channel中的closed字段是否为0，
+
+即使产生了这样的场景，那么在c中判断为0的话也只能说明之前就channel就是unclosed，并且channel不会被close多次，即使在两个原子读操作之前有其他goroutine对其进行相关操作也没有关系。
+所以这里的两个原子读操作和给这块临界区域加锁的效果是一样的，但是却比加锁的成本小很多，很精彩。
